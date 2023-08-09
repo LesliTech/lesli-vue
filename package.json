@@ -5,16 +5,11 @@
     "homepage": "https://www.lesli.dev/",
     "description": "Lesli tools and components for VueJS",
     "author": "The Lesli Development Team <hello@lesli.tech>",
-    "main": "source/lesli.js",
+    "main": "index.js",
     "exports": {
-        ".": "./source/lesli.js",
-        "./applications": "./source/applications",
-        "./composables": "./source/composables",
-        "./components": "./source/components",
-        "./elements": "./source/elements",
-        "./layouts": "./source/layouts",
-        "./panels": "./source/panels",
-        "./stores": "./source/stores"
+        "./composables": "./source/composables/index.js",
+        "./components": "./source/components/index.js",
+        "./elements": "./source/elements/index.js"
     },
     "dependencies": {
 

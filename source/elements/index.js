@@ -1,3 +1,4 @@
+/*
 Lesli
 
 Copyright (c) 2023, Lesli Technologies, S. A.
@@ -26,3 +27,11 @@ Building a better future, one line of code at a time.
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
+*/
+
+module.useDate = require("./date");
+module.useDialog = require("./dialog");
+module.useHttp = require("./http");
+module.useMsg = require("./msg");
+module.useUrl = require("./url");
+module.useUtils = require("./utils");
