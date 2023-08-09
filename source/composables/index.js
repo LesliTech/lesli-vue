@@ -30,9 +30,9 @@ Building a better future, one line of code at a time.
 */
 
 
-export * from "./date";
-export * from "./dialog";
-export * from "./http";
-export * from "./msg"
-export * from "./url";
-export * from "./utils";
+export * from "./msg/msg"
+export * from "./url/url";
+export * from "./date/date";
+export * from "./http/http";
+export * from "./utils/utils";
+export * from "./dialog/dialog";
