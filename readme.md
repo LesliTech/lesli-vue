@@ -2,7 +2,7 @@
     <img width="200" alt="Lesli logo" src="./app/assets/images/lesli/brand/app-logo.svg" />
 </p>
 
-<h3 align="center">Vue elements, components and tools for Lesli</h3>
+<h3 align="center">Lesli Vue elements, components and tools.</h3>
 
 <hr/>
 

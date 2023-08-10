@@ -16,17 +16,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Your Smart Business Assistant. 
+Lesli · Ruby on Rails SaaS Development Engine.
 
 Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://lesli.tech
+@website  https://www.lesli.dev
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
-// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
-// ·
+// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
+// · 
 */
 
 
@@ -35,23 +35,18 @@ import { expect } from "chai"
 
 
 // · plugins to be tested
-import { useDate2 } from "../../../lib/vue/composables/date2"
+import { useDate2 } from "../../source/composables"
 
 
+// · 
 const Date2 = useDate2()
 
 
 // · 
-describe("VUE/COMPOSABLES/DATE2", () => {
+describe("COMPOSABLES/DATE2", () => {
 
     describe("Build a DATE2 from new Date()", () => {
         var date = new Date2
         expect(date.date().toString()).to.be.a("string");
-        //expect(url).to.equal("/administration/users/777");
     })
-
-    describe("Build a DATE2 from iso8601 string", () => {
-
-    })
-
 });

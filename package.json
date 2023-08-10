@@ -1,9 +1,9 @@
 {
     "name": "lesli-vue",
-    "version": "0.5.0",
+    "version": "0.1.0",
     "license": "GPLv3",
     "homepage": "https://www.lesli.dev/",
-    "description": "Lesli tools and components for VueJS",
+    "description": "Lesli Vue elements, components and tools.",
     "author": "The Lesli Development Team <hello@lesli.tech>",
     "main": "index.js",
     "exports": {
@@ -66,8 +66,7 @@
         "webpack:watch": "webpack --progress --env watch=true",
         "webpack:production": "webpack --progress --env mode=production",
 
-        "test": "npm run test:vue",
-        "test:scss": "jest tests/scss/scss.spec.js",
-        "test:vue": "vue-cli-service test:unit --recursive 'tests/vue/**/*.spec.js'"
+        "test": "vue-cli-service test:unit --recursive 'tests/**/*.spec.js'",
+        "test:composables": "vue-cli-service test:unit --recursive 'tests/composables/*.spec.js'"
     }
 }

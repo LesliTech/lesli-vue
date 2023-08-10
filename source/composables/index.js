@@ -32,7 +32,7 @@ Building a better future, one line of code at a time.
 
 export * from "./msg/msg"
 export * from "./url/url";
-export * from "./date/date";
+export * from "./date2/date2";
 export * from "./http/http";
 export * from "./utils/utils";
 export * from "./dialog/dialog";

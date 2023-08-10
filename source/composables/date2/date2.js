@@ -137,7 +137,7 @@ class LesliDate {
 
 
 
-export function useDate() {
+export function useDate2() {
 
     return function (datetime = dayjs().utc().format(), format = "%Y-%m-%d %H:%M:%S") {
         return new LesliDate(datetime, format)
