@@ -16,7 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Ruby on Rails SaaS Development Engine.
+Lesli · Ruby on Rails SaaS Development Framework.
 
 Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
@@ -35,18 +35,18 @@ import { expect } from "chai"
 
 
 // · plugins to be tested
-import { useDate } from "../../source/composables"
+import { useLesliDate } from "../../source/composables"
 
 
 // · 
-const Date2 = useDate()
+const LesliDate = useLesliDate()
 
 
 // · 
-describe("COMPOSABLES/DATE2", () => {
+describe("COMPOSABLES/DATE", () => {
 
-    describe("Build a DATE2 from new Date()", () => {
-        var date = new Date2
+    describe("Build a DATE from new Date()", () => {
+        var date = new LesliDate
         expect(date.date().toString()).to.be.a("string");
     })
 });
