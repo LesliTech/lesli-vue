@@ -95,5 +95,5 @@ jobs:
 
 
       # Run Vue tests
-      - name: Run Vue tests
+      - name: Run composables tests
         run: npm run test:composables

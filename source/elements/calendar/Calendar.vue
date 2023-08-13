@@ -34,8 +34,8 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref, reactive, onMounted, watch, computed } from "vue"
-import { SetupCalendar, Calendar, DatePicker } from 'v-calendar';
+//import { ref, reactive, onMounted, watch, computed } from "vue"
+//import { SetupCalendar, Calendar, DatePicker } from 'v-calendar';
 import 'v-calendar/dist/style.css';
 
 
@@ -95,41 +95,5 @@ watch(dateRange, () => {
 
 </script>
 <template>
-    <DatePicker v-if="!range" v-model="date" :mode="mode" class="lesli-calendar" :min-date="props.minDate" :is-required="props.required" >
-        <template v-slot="{ inputValue, inputEvents }">
-            <input
-                class="input is-default"
-                v-on="inputEvents"
-                :value="placeholderValue ? placeholderValue : inputValue"
-            />
-            <span class="icons is-small">
-                <span class="material-icons">
-                    date_range
-                </span>
-            </span>
-        </template>
-    </DatePicker>
 
-    <DatePicker v-if="range" v-model="dateRange" is-range >
-        <template v-slot="{ inputValue, inputEvents }">
-            <input
-                class="input is-default"
-                :value="inputValue.start + ' - ' + inputValue.end"
-                v-on="inputEvents.start"
-                readonly
-            />
-            <!--
-            <input
-                class="input is-default"
-                :value="inputValue.start"
-                v-on="inputEvents.start"
-            />
-            <input
-                class="input is-default"
-                :value="inputValue.end"
-                v-on="inputEvents.end"
-            />
-            -->
-        </template>
-    </DatePicker>
 </template>

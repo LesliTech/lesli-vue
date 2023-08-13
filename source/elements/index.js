@@ -16,7 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Ruby on Rails SaaS Development Engine.
+Lesli · Ruby on Rails SaaS Development Framework.
 
 Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
@@ -29,63 +29,68 @@ Building a better future, one line of code at a time.
 // · 
 */
 
-import application from "./application/Application.vue"
-import autocomplete from "./application/Autocomplete.vue"
-import avatar from "./avatar/Avatar.vue"
-import button from "./button/Button.vue"
-import calendar from "./calendar/Calendar.vue"
-import card from "./card/Card.vue"
-import collapse from "./collapse/Collapse.vue"
-import control from "./control/Control.vue"
-import dropdown from "./dropdown/Dropdown.vue"
-import empty from "./empty/Empty.vue"
-import form from "./form/Form.vue"
-import header from "./header/Header.vue"
-import icon from "./icon/Icon.vue"
-import input from "./input/Input.vue"
-import inputTag from "./input/InputTag.vue"
-import link from "./link/Link.vue"
-import loading from "./loading/Loading.vue"
-import map from "./map/Map.vue"
-import navbar from "./navbar/Navbar.vue"
-import navigation from "./navigation/Navigation.vue"
-import pagination from "./pagination/Pagination.vue"
-import panel from "./panel/Panel.vue"
-import select from "./select/Select.vue"
-import table from "./table/Table.vue"
-import tabs from "./tabs/Tabs.vue"
-import tabItem from "./tabs/TabItem.vue"
-import toggle from "./toggle/Toggle.vue"
-import toolbar from "./toolbar/Toolbar.vue"
+
+// · 
+import lesliElementApplication from "./application/Application.vue"
+import lesliElementAutocomplete from "./autocomplete/Autocomplete.vue"
+import lesliElementAvatar from "./avatar/Avatar.vue"
+import lesliElementButton from "./button/Button.vue"
+import lesliElementCalendar from "./calendar/Calendar.vue"
+import lesliElementCard from "./card/Card.vue"
+import lesliElementCollapse from "./collapse/Collapse.vue"
+import lesliElementControl from "./control/Control.vue"
+import lesliElementDropdown from "./dropdown/Dropdown.vue"
+import lesliElementEmpty from "./empty/Empty.vue"
+import lesliElementForm from "./form/Form.vue"
+import lesliElementHeader from "./header/Header.vue"
+import lesliElementIcon from "./icon/Icon.vue"
+import lesliElementInput from "./input/Input.vue"
+import lesliElementInputTag from "./inputTag/InputTag.vue"
+import lesliElementLink from "./link/Link.vue"
+import lesliElementLoading from "./loading/Loading.vue"
+import lesliElementMap from "./map/Map.vue"
+import lesliElementNavbar from "./navbar/Navbar.vue"
+import lesliElementNavigationList from "./navigation/NavigationList.vue"
+import lesliElementPagination from "./pagination/Pagination.vue"
+import lesliElementPanel from "./panel/Panel.vue"
+import lesliElementSelect from "./select/Select.vue"
+import lesliElementTable from "./table/Table.vue"
+import lesliElementTabs from "./tabs/Tabs.vue"
+import lesliElementTabItem from "./tabs/TabItem.vue"
+import lesliElementToggle from "./toggle/Toggle.vue"
+import lesliElementToolbar from "./toolbar/Toolbar.vue"
+import lesliElementFileUploader from "./fileUploader/FileUploader.vue"
 
 
+// · 
 export { 
-    application, 
-    autocomplete, 
-    avatar, 
-    button, 
-    calendar, 
-    card, 
-    collapse, 
-    control, 
-    dropdown, 
-    empty, 
-    form, 
-    header, 
-    icon, 
-    input, 
-    inputTag, 
-    link, 
-    loading, 
-    map, 
-    navbar, 
-    navigation, 
-    pagination, 
-    panel, 
-    select, 
-    table, 
-    tabs, 
-    tabItem, 
-    toggle, 
-    toolbar 
+    lesliElementApplication, 
+    lesliElementAutocomplete, 
+    lesliElementAvatar, 
+    lesliElementButton, 
+    lesliElementCalendar, 
+    lesliElementCard, 
+    lesliElementCollapse, 
+    lesliElementControl, 
+    lesliElementDropdown, 
+    lesliElementEmpty, 
+    lesliElementForm, 
+    lesliElementHeader, 
+    lesliElementIcon, 
+    lesliElementInput, 
+    lesliElementInputTag, 
+    lesliElementLink, 
+    lesliElementLoading, 
+    lesliElementMap, 
+    lesliElementNavbar, 
+    lesliElementNavigationList, 
+    lesliElementPagination, 
+    lesliElementPanel, 
+    lesliElementSelect, 
+    lesliElementTable, 
+    lesliElementTabs, 
+    lesliElementTabItem, 
+    lesliElementToggle, 
+    lesliElementToolbar,
+    lesliElementFileUploader
 }
