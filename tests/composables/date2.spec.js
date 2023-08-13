@@ -35,11 +35,11 @@ import { expect } from "chai"
 
 
 // · plugins to be tested
-import { useDate2 } from "../../source/composables"
+import { useDate } from "../../source/composables"
 
 
 // · 
-const Date2 = useDate2()
+const Date2 = useDate()
 
 
 // · 

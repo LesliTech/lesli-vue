@@ -22,7 +22,7 @@ Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://www.lesli.tech
+@website  https://www.lesli.dev
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
@@ -30,9 +30,10 @@ Building a better future, one line of code at a time.
 */
 
 
+// · 
 export * from "./msg/msg"
 export * from "./url/url";
-export * from "./date2/date2";
+export * from "./date/date";
 export * from "./http/http";
 export * from "./utils/utils";
 export * from "./dialog/dialog";
