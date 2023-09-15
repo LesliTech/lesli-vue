@@ -34,7 +34,7 @@ Building a better future, one line of code at a time.
 
 </script>
 <template>
-    <section class="lesli-element-application container">
+    <section class="lesli-element-content container">
         <slot></slot>
     </section>
 </template>

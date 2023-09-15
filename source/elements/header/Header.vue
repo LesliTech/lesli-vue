@@ -58,25 +58,17 @@ function goBack() {
 
 </script>
 <template>
-    <nav class="navbar lesli-header">
-        <div class="navbar-brand">
-            <div class="navbar-item">
-                <button v-if="false" class="button is-ghost" @click="goBack()">
-                    <span class="material-icons">
-                        arrow_back
-                    </span>
-                </button>
-                <h1 class="title is-4" v-if="title">{{ title }}</h1>
-            </div>
+    <section class="lesli-element-header is-flex">
+        <div class="lesli-element-header-title is-flex">
+            <button v-if="false" class="button is-ghost" @click="goBack()">
+                <span class="material-icons">
+                    arrow_back
+                </span>
+            </button>
+            <h1 class="subtitle is-3" v-if="title">{{ title }}</h1>
         </div>
-        <div class="navbar-menu">
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="actions">
-                        <slot></slot>
-                    </div>
-                </div>
-            </div>
+        <div class="lesli-element-header-items is-flex is-flex-grow-1 is-justify-content-end">
+                <slot></slot>
         </div>
-    </nav>
+    </section>
 </template>
