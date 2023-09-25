@@ -18,20 +18,18 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Your Smart Business Assistant. 
+Lesli · Ruby on Rails SaaS Development Framework.
 
 Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://lesli.tech
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
-// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
+// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
-
 
 
 // · import vue tools
@@ -189,7 +187,7 @@ watch(() => props.labels, (newLabels) => {
 </script>
 <template>
     <div class="component-chart">
-        <h3 v-if="!!title">{{ title }}</h3>
+        <h3 class="pl-3 pt-2" v-if="!!title">{{ title }}</h3>
         <p v-if="!!subtitle">{{ subtitle }}</p>
         <div :id="chartId"></div>
     </div>

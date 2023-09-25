@@ -334,10 +334,7 @@ export function useLesliUrl() {
         
         // · Build a url for core administration area
         admin(path, params={}) {
-            return (new LesliUrl()).engine("lesli", path, params)
-        },
-        lesli(path, params={}) {
-            return (new LesliUrl()).engine("lesli", path, params)
+            return (new LesliUrl()).engine("admin", path, params)
         },
         
         // · Build a url for CloudAudit engine
