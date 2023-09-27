@@ -29,10 +29,15 @@ Building a better future, one line of code at a time.
 // · 
 */
 
+import lesliChartLine from "./charts/line/line.vue"
+
 import editorRichTextViewer from "./editors/richtext-viewer.vue"
 import editorRichText from "./editors/richtext.vue"
 import editorKeypad from "./editors/keypad.vue"
 
-export { editorRichTextViewer, editorRichText, editorKeypad }
-
-
+export { 
+    editorRichTextViewer, 
+    editorRichText, 
+    editorKeypad,
+    lesliChartLine
+}
