@@ -31,14 +31,12 @@ Building a better future, one line of code at a time.
 
 
 // · 
-import lesliElementApplication from "./application/Application.vue"
 import lesliElementAutocomplete from "./autocomplete/Autocomplete.vue"
 import lesliElementAvatar from "./avatar/Avatar.vue"
 import lesliElementButton from "./button/Button.vue"
 import lesliElementCalendar from "./calendar/Calendar.vue"
 import lesliElementCard from "./card/Card.vue"
 import lesliElementCollapse from "./collapse/Collapse.vue"
-import lesliElementContent from "./content/Content.vue"
 import lesliElementControl from "./control/Control.vue"
 import lesliElementDropdown from "./dropdown/Dropdown.vue"
 import lesliElementEmpty from "./empty/Empty.vue"
@@ -65,14 +63,12 @@ import lesliElementFileUploader from "./fileUploader/FileUploader.vue"
 
 // · 
 export {
-    lesliElementApplication,
     lesliElementAutocomplete, 
     lesliElementAvatar, 
     lesliElementButton, 
     lesliElementCalendar, 
     lesliElementCard, 
     lesliElementCollapse, 
-    lesliElementContent,
     lesliElementControl, 
     lesliElementDropdown, 
     lesliElementEmpty, 
