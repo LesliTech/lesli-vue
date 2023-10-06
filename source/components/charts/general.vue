@@ -168,7 +168,9 @@ onMounted(() => {
 
 
 // · watch for changes on prop series to update chart options
-watch(() => props.series, (newSeries) => chart.updateSeries(newSeries))
+watch(() => props.series, (newSeries) => {
+    chart.updateSeries(newSeries)
+})
 
 
 // · watch for changes on prop labels to update chart options

@@ -39,7 +39,7 @@ import { ref, reactive, onMounted, watch } from "vue"
 
 
 // · import & define local components
-import componentChartGeneral from "Lesli/components/charts/general.vue"
+import componentChartGeneral from "../general.vue"
 
 
 // · defining props
@@ -89,32 +89,12 @@ const barOptions = {
         }
     }
 };
-
-
-const parsedSeries = ref([{ data: [] }])
-
-
-// 
-function updateSeries(data) {
-    parsedSeries.value = [{ 
-        data: props.series
-    }]
-}
-
-onMounted(() => {
-    updateSeries()
-})
-
-watch(() => props.series, () => {
-    updateSeries()
-})
-
 </script>
 <template>
     <componentChartGeneral 
         type="bar"
         :title="title"
-        :series="parsedSeries"
+        :series="series"
         :labels="labels"
         :options="barOptions">
     </componentChartGeneral>
