@@ -35,42 +35,18 @@ import { expect } from "chai"
 
 
 // · plugins to be tested
-import { useLesliUtils } from "../../source/composables"
-
-
-// · Composable instance
-const UTILS = useLesliUtils()
+import { useLesliDate } from "../../composables"
 
 
 // · 
-describe("VUE/COMPOSABLES/UTILS", () => {
+const LesliDate = useLesliDate()
 
-    describe("Initials", () => {
-        
-        it("Get initials from word", () => {
-            var initials = UTILS.initials("Lesli")
-            expect(initials).to.equal("L")
-        });
 
-        it("Get initials from words", () => {
-            var initials = UTILS.initials("Lesli", "Tech")
-            expect(initials).to.equal("LT")
-        });
+// · 
+describe("COMPOSABLES/DATE", () => {
 
-    });
-
-    describe("Singularize", () => {
-        
-        it("Get singular word of birds", () => {
-            var initials = UTILS.singularize("Birds")
-            expect(initials).to.equal("Bird")
-        })
-
-        it("Get singular word of Companies", () => {
-            var initials = UTILS.singularize("Companies")
-            expect(initials).to.equal("Company")
-        })
-
-    });
-
+    describe("Build a DATE from new Date()", () => {
+        var date = new LesliDate
+        expect(date.date().toString()).to.be.a("string");
+    })
 });

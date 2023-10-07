@@ -135,8 +135,8 @@ const buttonColor = computed(() => {
         :class="[
             'button', 
             'is-link',
-            'is-light',
             buttonColor, 
+            { 'is-light': !solid }, 
             { 'is-outlined': !solid }, 
             { 'is-loading': loading }, 
             { 'is-small': small }]">

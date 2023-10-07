@@ -35,7 +35,7 @@ import { expect } from "chai"
 
 
 // · plugins to be tested
-import { useLesliUrl } from "../../source/composables"
+import { useLesliUrl } from "../../composables"
 
 
 // · Composable instance
@@ -61,18 +61,18 @@ describe("COMPOSABLES/URL", () => {
             it(`should build a url for ${ ext.toUpperCase() } request`, () => {
                 var url = URL.admin("users").toString(`.${ ext }`)
                 expect(url).to.be.a("string");
-                expect(url).to.equal(`/lesli/users.${ ext }`)
+                expect(url).to.equal(`/admin/users.${ ext }`)
             });
         })
       
         it("should build a url with json extension through json method", () => {
             var url = URL.admin("users").json()
-            expect(url).to.equal("/lesli/users.json")
+            expect(url).to.equal("/admin/users.json")
         })
 
         it("should build a url with pdf extension through pdf method", () => {
             var url = URL.admin("users").pdf()
-            expect(url).to.equal("/lesli/users.pdf")
+            expect(url).to.equal("/admin/users.pdf")
         })
 
     })
@@ -83,32 +83,32 @@ describe("COMPOSABLES/URL", () => {
         it("should build a url for administration users", () => {
             var url = URL.admin("users").toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users");
+            expect(url).to.equal("/admin/users");
         });
         
         it("should build a url for administration users list", () => {
             var url = URL.admin("users/list").toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users/list");
+            expect(url).to.equal("/admin/users/list");
         });
     
         it("should build a url for administration users options", () => {
             var url = URL.admin("users/options").toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users/options");
+            expect(url).to.equal("/admin/users/options");
         });
 
         it("should build a url for an specific user", () => {
             var url = URL.admin("users/:id", 777).toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users/777");
+            expect(url).to.equal("/admin/users/777");
         });
 
 
         it("should build a url for an specific user through object params", () => {
             var url = URL.admin("users/:id", { id: 777 }).toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users/777");
+            expect(url).to.equal("/admin/users/777");
         });
 
     });
@@ -118,13 +118,13 @@ describe("COMPOSABLES/URL", () => {
         it("should build a url with order column", () => {
             var url = URL.admin("users").order("name").toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users?orderBy=name&order=asc");
+            expect(url).to.equal("/admin/users?orderBy=name&order=asc");
         });
 
         it("should build a url with order params", () => {
             var url = URL.admin("users").order("name", "desc").toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users?orderBy=name&order=desc");
+            expect(url).to.equal("/admin/users?orderBy=name&order=desc");
         });
 
     });
@@ -134,19 +134,19 @@ describe("COMPOSABLES/URL", () => {
         it("should build a url for default pagination", () => {
             var url = URL.admin("users").paginate(1).toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users?page=1&perPage=15");
+            expect(url).to.equal("/admin/users?page=1&perPage=15");
         });
 
         it("should build a url for paginate page 5", () => {
             var url = URL.admin("users").paginate(5).toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users?page=5&perPage=15");
+            expect(url).to.equal("/admin/users?page=5&perPage=15");
         });
 
         it("should build a url for paginate 20 items per page", () => {
             var url = URL.admin("users").paginate(1,20).toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users?page=1&perPage=20");
+            expect(url).to.equal("/admin/users?page=1&perPage=20");
         });
 
     });
@@ -156,7 +156,7 @@ describe("COMPOSABLES/URL", () => {
         it("should build a url with a search param", () => {
             var url = URL.admin("users").search("my search string").toString()
             expect(url).to.be.a("string");
-            expect(url).to.equal("/lesli/users?search=my search string");
+            expect(url).to.equal("/admin/users?search=my search string");
         });
 
     });
@@ -165,12 +165,12 @@ describe("COMPOSABLES/URL", () => {
         
         it("should build a url to filter by role name", () => {
             var url = URL.admin("users").filter({ roles: ['admin', 'guest'] }).toString()
-            expect(url).to.equal("/lesli/users?f[roles]=admin,guest");
+            expect(url).to.equal("/admin/users?f[roles]=admin,guest");
         });
 
         it("should build a url with multiple filters", () => {
             var url = URL.admin("users").filter({ roles: ['admin', 'guest'], categories: ['cat1', 'cat2'] }).toString()
-            expect(url).to.equal("/lesli/users?f[roles]=admin,guest&f[categories]=cat1,cat2");
+            expect(url).to.equal("/admin/users?f[roles]=admin,guest&f[categories]=cat1,cat2");
         });
 
     });
@@ -209,12 +209,12 @@ describe("COMPOSABLES/URL", () => {
 
         it("should build a full feature url for the admin area", () => {
             var url = URL.admin().order("id").paginate(1).search("text").filter({ role: ['admin'] }).toString()
-            expect(url).to.equal("/lesli/?orderBy=id&order=asc&page=1&perPage=15&search=text&f[role]=admin")
+            expect(url).to.equal("/admin/?orderBy=id&order=asc&page=1&perPage=15&search=text&f[role]=admin")
         });
 
         it("should build a full feature url for the admin area with path", () => {
             var url = URL.admin("user/:userid", { userid: "2" }).order("id").paginate(1).search("text").filter({ role: ['admin'] }).toString()
-            expect(url).to.equal("/lesli/user/2?orderBy=id&order=asc&page=1&perPage=15&search=text&f[role]=admin")
+            expect(url).to.equal("/admin/user/2?orderBy=id&order=asc&page=1&perPage=15&search=text&f[role]=admin")
         });
 
         it("should build a full feature url for an engine", () => {
