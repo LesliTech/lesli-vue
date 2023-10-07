@@ -1,11 +1,28 @@
 {
     "name": "lesli-vue",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "license": "GPLv3",
     "homepage": "https://www.lesli.dev/",
     "description": "Vue elements, components, composables and tools for The Lesli Framework.",
     "author": "The Lesli Development Team <hello@lesli.tech>",
     "main": "index.js",
+    "keywords": [
+        "lesli",
+        "bulma",
+        "vue",
+        "vuejs",
+        "components",
+        "vue-components",
+        "ui-library",
+        "ui"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LesliTech/lesli-vue.git"
+    },
+        "bugs": {
+        "url": "https://github.com/LesliTech/lesli-vue/issues"
+    },
     "exports": {
         "./composables": "./source/composables/index.js",
         "./components": "./source/components/index.js",
