@@ -14,6 +14,9 @@
 
 This library was originally developed for seamless integration with the Lesli framework. However, its versatility allows for utilization in various projects beyond Lesli. Stay tuned for the upcoming documentation.
 
+
+<br />
+
 ### Quick start
 
 ```shell
@@ -39,10 +42,14 @@ import { lesliElementButton } from "lesli-vue/elements"
 ```
 
 
+<br />
+
 ### Documentation
 * [Roadmap](./docs/roadmap.md)
 * [documentation](https://www.lesli.dev/documentation/)
 
+
+<br />
 
 ### Get in touch
 
@@ -50,6 +57,8 @@ import { lesliElementButton } from "lesli-vue/elements"
 * [Email: hello@lesli.tech](hello@lesli.tech)
 * [Twitter: @LesliTech](https://twitter.com/LesliTech)
 
+
+<br />
 
 ### License
 -------

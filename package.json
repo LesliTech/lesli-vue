@@ -1,6 +1,6 @@
 {
     "name": "lesli-vue",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "license": "GPLv3",
     "homepage": "https://www.lesli.dev/",
     "description": "Vue elements, components, composables and tools for The Lesli Framework.",
