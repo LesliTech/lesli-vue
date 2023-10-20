@@ -44,7 +44,7 @@
         "jest": "29.7.0"
     },
     "scripts": {
-        "test": "nyc vue-cli-service test:unit --recursive 'source/**/**/url.spec.js'",
+        "test": "nyc --reporter=lcov vue-cli-service test:unit --recursive 'source/**/**/url.spec.js'",
         "test:composables": "vue-cli-service test:unit --recursive 'source/**/**/*.spec.js'"
     }
 }
