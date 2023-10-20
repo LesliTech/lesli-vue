@@ -328,8 +328,8 @@ export function useLesliUrl() {
         },
         
         // · Build a url for administration area
-        profile(path, params={}) {
-            return (new LesliUrl()).engine("administration/profile", path, params)
+        lesli(path, params={}) {
+            return (new LesliUrl()).root(path, params)
         },
         
         // · Build a url for core administration area
