@@ -22,7 +22,7 @@ Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://www.lesli.dev
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
@@ -31,16 +31,45 @@ Building a better future, one line of code at a time.
 
 
 // · 
-// export * from "./msg/msg"
-// export * from "./url/url";
-// export * from "./date/date";
-// export * from "./http/http";
-// export * from "./utils/utils";
-// export * from "./dialog/dialog";
+import vue from "rollup-plugin-vue"
+import peerDepsExternal from "rollup-plugin-peer-deps-external"
 
 
-import {useLesliUrl} from "./url/url"
-    
-export {
-    useLesliUrl
-}
+// · 
+export default [{
+    input: "source/elements/index.js",
+    output: [{
+        format: "esm",
+        file: "dist/elements.mjs"
+    }, {
+        format: "cjs",
+        file: "dist/elements.js"
+    }],
+    plugins: [
+        vue(), peerDepsExternal()
+    ]
+}, {
+    input: "source/composables/index.js",
+    output: [{
+        format: "esm",
+        file: "dist/composables.mjs"
+    }, {
+        format: "cjs",
+        file: "dist/composables.js"
+    }],
+    plugins: [
+        vue(), peerDepsExternal()
+    ]
+}, {
+    input: "source/components/index.js",
+    output: [{
+        format: "esm",
+        file: "dist/components.mjs"
+    }, {
+        format: "cjs",
+        file: "dist/components.js"
+    }],
+    plugins: [
+        vue(), peerDepsExternal()
+    ]
+}]

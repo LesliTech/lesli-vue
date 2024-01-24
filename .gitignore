@@ -33,8 +33,12 @@
 
 
 # Development tools
+
+*.tgz
 .DS_Store
 .nyc_output
 package-lock.json
 /node_modules
 /coverage
+/package
+/dist
