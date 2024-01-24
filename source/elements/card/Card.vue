@@ -56,7 +56,12 @@ const props = defineProps({
         <div v-if="slots['header']" class="card-header">
             <slot name="header"></slot>
         </div>
-        <div class="card-content">
+        <div v-if="!slots.header && props.title" class="">
+            <h4 class="card-header-title pb-0 pt-2 pl-3">
+                {{ props.title }}
+            </h4>
+        </div>
+        <div class="card-content py-3 px-4">
             <slot></slot>
         </div>
     </div>

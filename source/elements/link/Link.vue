@@ -38,6 +38,9 @@ Building a better future, one line of code at a time.
 import { ref, reactive, onMounted, watch, computed, useSlots } from "vue"
 
 // · 
+import LesliButton from "../button/Button.vue";
+
+// · 
 const slots = useSlots()
 
 // · defining emits
@@ -59,11 +62,6 @@ const props = defineProps({
         default: false,
         required: false
     },
-    primary: {
-        type: Boolean,
-        default: true,
-        required: false
-    },
     danger: {
         type: Boolean,
         default: false,
@@ -79,16 +77,6 @@ const props = defineProps({
         default: false,
         required: false
     },
-    solid: {
-        type: Boolean,
-        default: false,
-        required: false
-    },
-    small: {
-        type: Boolean,
-        default: false,
-        required: false
-    },
     iconOnly: {
         type: Boolean,
         default: false,
@@ -96,55 +84,9 @@ const props = defineProps({
     }
 })
 
-
-const buttonColor = computed(() => {
-
-    if (props.warning) return "is-warning"
-
-    if (props.danger) return "is-danger"
-
-    if (props.info) return "is-info"
-
-    return "is-primary"
-
-})
-
 </script>
 <template>
-    <router-link 
-        v-if="props.to" 
-        :to="to.toString()"
-        :class="[
-            'button', 
-            'is-link',
-            'is-light',
-            buttonColor, 
-            { 'is-outlined': !solid }, 
-            { 'is-loading': loading }, 
-            { 'is-small': small }]">
-        <span v-if="icon" :class="['icon', { 'is-small': small }]">
-            <span class="material-icons">{{ icon }}</span>
-        </span>
-        <span v-if="!iconOnly">
-            <slot></slot>
-        </span>
+    <router-link :to="to.toString()" v-bind="props">
+        <slot></slot>
     </router-link>
-    <button 
-        v-if="!props.to" 
-        @click="emit('click')" 
-        :class="[
-            'button', 
-            'is-link',
-            'is-light',
-            buttonColor, 
-            { 'is-outlined': !solid }, 
-            { 'is-loading': loading }, 
-            { 'is-small': small }]">
-        <span v-if="icon" :class="['icon', { 'is-small': small }]">
-            <span class="material-icons">{{ icon }}</span>
-        </span>
-        <span v-if="!iconOnly">
-            <slot></slot>
-        </span>
-    </button>
 </template>

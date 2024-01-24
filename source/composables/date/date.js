@@ -33,8 +33,8 @@ Building a better future, one line of code at a time.
 /*
 IMPORTANT:  
     This is a JavaScript implementation of app/lib/Date2 RoR lib.
-    If any modification or update is needed it must be implemented in app/lib/Date2 first, then we can
-    copy the new feature and implement in here.
+    If any modification or update is needed, it must be implemented in app/lib/Date2 first, then we can
+    copy the new feature and implement it in here.
     DO NOT add custom features, methods, params or any other modification that is not present in app/lib/Date2
 */
 
@@ -76,8 +76,8 @@ class LesliDate {
                 date: "%d.%m.%Y",
                 time: "%H:%M",                          // 24 hours datetime format (default)
                 dateTime: "%d.%m.%Y %H:%M",             // 24 hours datetime format (default)
-                dateWords: "%A, %B %d, %Y",
-                dateTimeWords: "%A, %B %d, %Y, %H:%M"   // 24 hours datetime in words format (default)
+                dateWords: "%A / %B %d, %Y",
+                dateTimeWords: "%A / %B %d, %Y, %H:%M"   // 24 hours datetime in words format (default)
             }
         }
 
@@ -91,7 +91,7 @@ class LesliDate {
     
     date() {
         this.#setFormat("date")
-        return this
+        return this.toString()
     }
 
 
@@ -103,7 +103,7 @@ class LesliDate {
 
     dateWords() {
         this.#setFormat("dateWords")
-        return this
+        return this.toString()
     }
 
 

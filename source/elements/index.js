@@ -34,6 +34,7 @@ Building a better future, one line of code at a time.
 import lesliElementAutocomplete from "./autocomplete/Autocomplete.vue"
 import lesliElementAvatar from "./avatar/Avatar.vue"
 import lesliElementButton from "./button/Button.vue"
+import lesliElementButtonLink from "./buttonLink/ButtonLink.vue"
 import lesliElementCalendar from "./calendar/Calendar.vue"
 import lesliElementCard from "./card/Card.vue"
 import lesliElementCollapse from "./collapse/Collapse.vue"
@@ -68,6 +69,7 @@ export {
     lesliElementAutocomplete, 
     lesliElementAvatar, 
     lesliElementButton, 
+    lesliElementButtonLink, 
     lesliElementCalendar, 
     lesliElementCard, 
     lesliElementCollapse, 

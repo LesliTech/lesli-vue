@@ -44,7 +44,7 @@ import 'trix/dist/trix.css'
 
 
 // · defining emits
-const emit = defineEmits(['update:modelValue', 'change']);
+const emit = defineEmits(['update:modelValue', 'change', 'save']);
 
 
 // · randome id for html node
@@ -78,6 +78,21 @@ const editorOptions = {
 }
 
 
+// · Create a custom save button to be inserted into the Trix toolbar
+const saveButtonElement = document.createElement("button");
+saveButtonElement.classList.add("trix-lesli-button", "is-hidden");
+saveButtonElement.innerHTML = '<span class="icon"><span class="material-icons">save</span></span>';
+
+
+// · Create a custom button group for the custom buttons
+const containerElement = document.createElement("span");
+containerElement.classList.add("trix-button-group");
+
+
+// · Append the custom save button to the custom button group container
+const saveButtonNode = containerElement.appendChild(saveButtonElement)
+
+
 // · emits every change in the rich text editor
 function handleContentChange() {
 
@@ -86,61 +101,21 @@ function handleContentChange() {
 
     // trigger the @change method
     emit('change')
+
+    // allow to save the editor content
+    saveButtonElement.classList.remove("is-hidden");
 }
 
 
-// · waits for possible initial content to load into the richtext editor
-const watchModelValue = watch(() => props.modelValue, (newContent) => {  
+// · 
+function handleContentSave() {
 
-    // check for valid content
-    newContent = newContent === undefined ? '' : newContent
+    // trigger the @save method
+    emit('save')
 
-    // try to avoid the content update for duplicated content
-    if (editorContent?.value?.value != newContent) {
-
-        updateEditorContent(newContent)
-        
-    }
-    
-})
-
-
-onMounted(() => {
-
-    // load initial content, mostly from database
-    if (props.modelValue && editorNode.value.editor.innerHTML !== props.modelValue) {
-        updateEditorContent(props.modelValue)
-    }
-
-    // listen for file attachment, so we can store images as base64
-    editorNode.value.addEventListener("trix-attachment-add", function(event) {
-
-        // create a new reader
-        let reader = new FileReader();
-        
-        // read the attachment
-        reader.readAsDataURL(event.attachment.file);
-
-        // listen for the file to be loaded into the reader
-        reader.addEventListener('load', ()=> {
-
-            // create a temporary img container for our new attached file
-            let image = document.createElement('img');
-            image.src = reader.result;
-            let tmp = document.createElement('div');
-            tmp.appendChild(image);
-
-            // insert our attached image into the main html content (of the editor)
-            editorNode.value.editor.insertHTML(tmp.innerHTML)
-
-            // here we should remove the original attachment file from trix
-            // but for some reason this does not work :'(
-            event.attachment = ""
-
-        }, false);
-
-    })
-})
+    // 
+    saveButtonElement.classList.add("is-hidden");
+}
 
 
 // ·
@@ -182,8 +157,72 @@ function updateEditorContent(content) {
     editorNode.value.editor.setSelectedRange(content.length - 1)
 }
 
+// attach our method to trigger save function to the parent component
+saveButtonNode.onclick = handleContentSave 
 
 
+// · waits for possible initial content to load into the richtext editor
+const watchModelValue = watch(() => props.modelValue, (newContent) => {  
+
+    // check for valid content
+    newContent = newContent === undefined ? '' : newContent
+
+    // try to avoid the content update for duplicated content
+    if (editorContent?.value?.value != newContent) {
+
+        updateEditorContent(newContent)
+        
+    }
+    
+})
+
+
+// · 
+onMounted(() => {
+
+    // load initial content, mostly from database
+    if (props.modelValue && editorNode.value.editor.innerHTML !== props.modelValue) {
+        updateEditorContent(props.modelValue)
+    }
+
+
+    // listen for file attachment, so we can store images as base64
+    editorNode.value.addEventListener("trix-attachment-add", function(event) {
+
+        // create a new reader
+        let reader = new FileReader();
+        
+        // read the attachment
+        reader.readAsDataURL(event.attachment.file);
+
+        // listen for the file to be loaded into the reader
+        reader.addEventListener('load', ()=> {
+
+            // create a temporary img container for our new attached file
+            let image = document.createElement('img');
+            image.src = reader.result;
+            let tmp = document.createElement('div');
+            tmp.appendChild(image);
+
+            // insert our attached image into the main html content (of the editor)
+            editorNode.value.editor.insertHTML(tmp.innerHTML)
+
+            // here we should remove the original attachment file from trix
+            // but for some reason this does not work :'(
+            event.attachment = ""
+
+        }, false);
+
+    })
+
+
+    // · we must wait a little to let the DOM render the Trix editor
+    setTimeout(()=>{
+
+        // · append the container with the buttons to the main toolbar element
+        document.querySelector(".trix-button-row").appendChild(containerElement);
+    }, 800)
+})
 </script>
 <template>
     <div :class="['component-editor-richtext', props.mode]">
@@ -196,8 +235,3 @@ function updateEditorContent(content) {
         </trix-editor>
     </div>
 </template>
-<style>
-.attachment--png {
-    display: none !important;
-}
-</style>

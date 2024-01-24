@@ -43,12 +43,23 @@ const emit = defineEmits(['submit']);
 
 
 // · defining props
-const props = defineProps({})
+const props = defineProps({
+    flat: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    editable: {
+        type: Boolean,
+        required: false,
+        default: true,
+    }
+})
 
 </script>
 <template>
-    <form class="lesli-form" @submit.prevent="emit('submit')">
-        <fieldset>
+    <form :class="[{ 'lesli-form': !props.flat }]" @submit.prevent="emit('submit')">
+        <fieldset :disabled="!editable">
             <slot></slot>
         </fieldset>
     </form>
