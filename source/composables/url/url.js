@@ -91,7 +91,7 @@ class LesliUrl {
     
     
     // add standard query param to request paginated data to the server
-    paginate(page, perPage=15) {
+    paginate(page, perPage=12) {
         this.#query["page"] = page
         this.#query["perPage"] = perPage
         return this.#build()
@@ -329,7 +329,7 @@ export function useLesliUrl() {
         
         // · Build a url for administration area
         lesli(path, params={}) {
-            return (new LesliUrl()).root(path, params)
+            return (new LesliUrl()).engine("lesli", path, params)
         },
         
         // · Build a url for core administration area
@@ -353,8 +353,8 @@ export function useLesliUrl() {
         },
         
         // · Build a url for CloudHelp engine
-        help(path, params={}) {
-            return (new LesliUrl()).engine("help", path, params)
+        support(path, params={}) {
+            return (new LesliUrl()).engine("support", path, params)
         },
 
         // · Build a url for CloudMailer engine
@@ -405,6 +405,16 @@ export function useLesliUrl() {
         // · Build a url for CloudShared engine
         shared(path, params={}) {
             return (new LesliUrl()).engine("shared", path, params)
+        },
+
+        // · Build a url for CloudGuard engine
+        guard(path, params={}) {
+            return (new LesliUrl()).engine("guard", path, params)
+        },
+
+        // · 
+        letter(path, params={}) {
+            return (new LesliUrl()).engine("letter", path, params)
         },
 
         // · Build a url for CloudAuthority engine

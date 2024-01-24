@@ -283,8 +283,6 @@ function openDetails(record) {
 
                         </slot>
 
-                        
-
                     </td>
 
 
