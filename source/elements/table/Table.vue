@@ -35,8 +35,8 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref, reactive, onMounted, watch, computed, useSlots } from "vue"
-
+import { ref, computed, useSlots } from "vue"
+import "./Table.scss";
 
 // · 
 const slots = useSlots()
@@ -98,6 +98,7 @@ const currentSortDir = ref('asc')
 
 const dropdownActive = ref([])
 
+
 // · prepaer the CSS classes for every column in the header
 function tableHeaderClass(column) {
     return {
@@ -141,7 +142,9 @@ function paginate(page) {
 // · 
 function openDetails(record) {
     record.detailActive = !record.detailActive
-    setTimeout(() => { emit('details', record.detailActive) }, 500)
+    // This setTimeout triggers a warning to the console
+    //setTimeout(() => { emit('details', record.detailActive) }, 500)
+    emit("details", record.detailActive)
 }
 
 </script>
@@ -357,4 +360,3 @@ function openDetails(record) {
     <lesli-pagination v-if="props.pagination" :pagination="props.pagination" @paginate="paginate"></lesli-pagination>
 
 </template>
-    

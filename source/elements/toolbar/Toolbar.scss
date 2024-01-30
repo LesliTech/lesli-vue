@@ -1,4 +1,3 @@
-<script setup>
 /*
 
 Lesli
@@ -18,7 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Ruby on Rails SaaS Development Framework.
+Lesli · Ruby on Rails SaaS development platform.
 
 Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
@@ -28,45 +27,44 @@ Building a better future, one line of code at a time.
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
-// · 
+// ·  
 */
 
 
+// ·  
+@import "../../scss/component";
 
-// · import vue tools
 
+// · 
+.lesli-toolbar {
+    margin-bottom: 1rem;
 
-
-// · defining props
-const props = defineProps({
-    size: {
-        type: Number,
-        default: 5
-    },
-    icon: {
-        type: Boolean,
-        default: false
+    // General styles
+    input,
+    .select select {
+        border-radius: 8px;
+        border: 1px solid lesli-css-color(silver);
     }
-})
 
+    // search input
+    input {
+        &::placeholder {
+            color: lesli-css-color(silver, 700);
+            opacity: .8;
+        }
+    }
 
-// · defining variables
-const translations = {
-    shared: I18n.t('core.shared')
+    // autocomplete tag selectors
+    div.taginput-container.is-focusable {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+    }
+
+    // toolbar controls separation
+    .button:not(:last-child),
+    .control:not(:last-child) {
+        margin-right: 6px;
+    }
 }
-
-</script>
-<template>
-    <div class="lesli-loading has-text-centered">
-        <p>
-            <span class="loading-animation">
-                <hr/><hr/><hr/><hr/>
-            </span>
-            <span 
-                v-if="!icon"
-                :class="['is-size-'+size, 'ml-3']">
-                {{ translations.shared.view_text_loading }}...
-            </span>
-        </p>
-    </div>
-</template>

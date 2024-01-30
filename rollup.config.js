@@ -31,8 +31,10 @@ Building a better future, one line of code at a time.
 
 
 // · 
-import vue from "rollup-plugin-vue"
-import peerDepsExternal from "rollup-plugin-peer-deps-external"
+import vue from "rollup-plugin-vue";
+import scss from "rollup-plugin-scss";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import commonjs from 'rollup-plugin-commonjs';
 
 
 // · 
@@ -40,14 +42,17 @@ export default [{
     input: "source/elements/index.js",
     output: [{
         format: "esm",
-        file: "dist/elements.mjs"
+        file: "dist/elements.mjs",
     }, {
         format: "cjs",
-        file: "dist/elements.js"
+        file: "dist/elements.js",
     }],
     plugins: [
-        vue(), peerDepsExternal()
-    ]
+        vue(),
+        scss({ fileName: "elements.css" }),
+        peerDepsExternal()
+    ],
+    external: ["vue", "vue-router"]
 }, {
     input: "source/composables/index.js",
     output: [{
@@ -58,9 +63,12 @@ export default [{
         file: "dist/composables.js"
     }],
     plugins: [
-        vue(), peerDepsExternal()
-    ]
-}, {
+        vue(),
+        peerDepsExternal(),
+        commonjs()
+    ],
+    external: ["axios", "dayjs", "dayjs/plugin/utc.js", "dayjs/plugin/timezone.js"]
+}/*, {
     input: "source/components/index.js",
     output: [{
         format: "esm",
@@ -72,4 +80,4 @@ export default [{
     plugins: [
         vue(), peerDepsExternal()
     ]
-}]
+}*/]

@@ -34,7 +34,8 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref, reactive, onMounted, watch, computed } from "vue"
+import { ref, reactive, onMounted, computed } from "vue"
+import "./Toolbar.scss";
 
 
 // · defining emits
@@ -59,7 +60,7 @@ const props = defineProps({
 
 
 // · define variables
-const timer = reactive(setTimeout)
+const timer = ref(setTimeout)
 const text = ref("")
 
 

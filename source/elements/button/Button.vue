@@ -34,7 +34,7 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref, reactive, onMounted, watch, computed, useSlots } from "vue"
+import { computed, useSlots } from "vue"
 
 
 // · 
@@ -56,7 +56,7 @@ const props = defineProps({
         default: false,
         required: false
     },
-    main: {
+    solid: {
         type: Boolean,
         default: false,
         required: false
@@ -103,7 +103,7 @@ const buttonClasses = computed(() => {
 
     let classes = ["button", buttonVariant()]
 
-    if (!props.main) {
+    if (!props.solid) {
         classes.push("is-light")
         classes.push("is-outlined")
     }

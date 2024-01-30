@@ -56,6 +56,11 @@ Lesli table provides a dedicated row to print a "detail" for every record of the
 the "detail slot", if we provide this slot the table will render an aditional row (tr) with a single column
 where we can render custom html. 
 
+
+<br />
+<br />
+
+
 **Example:**
 
 ```html
@@ -69,7 +74,6 @@ where we can render custom html.
 </lesli-table>
 ```
 
-<br>
 
 **Example of a simple table that shows a list of ids and emails:**
 
@@ -82,14 +86,11 @@ where we can render custom html.
 
 **Result:**
 
-```raw
 <lesli-table
     :columns="[{field: 'id', label: 'ID'},{field: 'email', label: 'Email'}]"
     :records="[{id:0,email:'ldonis@lomax.com.gt'},{id:0,email:'ldonis@gmail.com'},{id:0,email:'emc2@ldonis.com'}]">
 </lesli-table>
-```
 
-<br>
 
 **Example of a simple table that is waiting for the store to complete the data request:**
 
@@ -103,15 +104,14 @@ where we can render custom html.
 
 **Result:**
 
-```raw
 <lesli-table
     :loading="true"
     :columns="[{field: 'id', label: 'ID'},{field: 'email', label: 'Email'}]"
     :records="[]">
 </lesli-table>
-```
 
 <br>
+
 
 **Example of a simple table with custom slot for the "email" field and custom slot for the table head for the email column:**
 
@@ -135,7 +135,6 @@ where we can render custom html.
 
 **Result:**
 
-```raw
 <lesli-table
     :columns="[{field: 'id', label: 'ID'},{field: 'email', label: 'Email'}]"
     :records="[{id:0,email:'ldonis@lomax.com.gt'},{id:0,email:'ldonis@gmail.com'},{id:0,email:'emc2@ldonis.com'}]">
@@ -148,7 +147,7 @@ where we can render custom html.
         </span>
     </template>
 </lesli-table>
-```
+
 
 **Example of a simple table with options column:**
 
@@ -166,7 +165,6 @@ where we can render custom html.
 
 **Result:**
 
-```raw
 <lesli-table
     :columns="[{field: 'id', label: 'ID'},{field: 'email', label: 'Email'}]"
     :records="[{id:0,email:'ldonis@lomax.com.gt'},{id:0,email:'ldonis@gmail.com'},{id:0,email:'emc2@ldonis.com'}]">
@@ -176,7 +174,7 @@ where we can render custom html.
         </a>
     </template>
 </lesli-table>
-```
+
 
 **Example of a simple table with href:**
 
@@ -190,13 +188,12 @@ where we can render custom html.
 
 **Result:**
 
-```raw
 <lesli-table
     :href="(record) => `link-to-my/${record.id}`"
     :columns="[{field: 'id', label: 'ID'},{field: 'email', label: 'Email'}]"
     :records="[{id:0,email:'ldonis@lomax.com.gt'},{id:0,email:'ldonis@gmail.com'},{id:0,email:'emc2@ldonis.com'}]">
 </lesli-table>
-```
+
 
 **Example of a simple table with detail:**
 
@@ -214,7 +211,6 @@ where we can render custom html.
 
 **Result:**
 
-```raw
 <lesli-table
     :columns="[{field: 'id', label: 'ID'},{field: 'email', label: 'Email'}]"
     :records="[{id:0,email:'ldonis@lomax.com.gt'},{id:0,email:'ldonis@gmail.com'},{id:0,email:'emc2@ldonis.com'}]">
@@ -224,7 +220,6 @@ where we can render custom html.
         </button>
     </template>
 </lesli-table>
-```
 
 
 **Example of a simple table with buttons:**
@@ -245,7 +240,6 @@ where we can render custom html.
 
 **Result:**
 
-```raw
 <lesli-table
     :columns="[{field: 'id', label: 'ID'},{field: 'email', label: 'Email'}]"
     :records="[{id:0,email:'ldonis@lomax.com.gt'},{id:0,email:'ldonis@gmail.com'},{id:0,email:'emc2@ldonis.com'}]">
@@ -257,4 +251,3 @@ where we can render custom html.
         </button>
     </template>
 </lesli-table>
-```

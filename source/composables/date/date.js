@@ -40,9 +40,9 @@ IMPORTANT:
 
 
 // · Import dayjs library and plugins
-import dayjs from "dayjs"
-var utc = require("dayjs/plugin/utc")
-var timezone = require("dayjs/plugin/timezone")
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js"; 
+import timezone from "dayjs/plugin/timezone.js";
 
 
 // · 

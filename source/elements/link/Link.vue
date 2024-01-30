@@ -18,30 +18,28 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Your Smart Business Assistant. 
+Lesli · Ruby on Rails SaaS Development Framework.
 
 Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://lesli.tech
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
-// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
+// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
 
 
 
 // · import vue tools
-import { ref, reactive, onMounted, watch, computed, useSlots } from "vue"
+import { computed, useSlots } from "vue"
 
-// · 
-import LesliButton from "../button/Button.vue";
 
 // · 
 const slots = useSlots()
+
 
 // · defining emits
 const emit = defineEmits(['click']);
@@ -49,15 +47,24 @@ const emit = defineEmits(['click']);
 
 // · defining props
 const props = defineProps({
+    button: {
+        type: Boolean,
+        required: false
+    },
     to: {
         type: Object,
-        required: false
+        required: true
     },
     icon: {
         type: String,
         required: false
     },
     loading: {
+        type: Boolean,
+        default: false,
+        required: false
+    },
+    solid: {
         type: Boolean,
         default: false,
         required: false
@@ -77,6 +84,11 @@ const props = defineProps({
         default: false,
         required: false
     },
+    small: {
+        type: Boolean,
+        default: false,
+        required: false
+    },
     iconOnly: {
         type: Boolean,
         default: false,
@@ -84,9 +96,50 @@ const props = defineProps({
     }
 })
 
+function buttonVariant() {
+
+    if (props.warning) return "is-warning"
+
+    if (props.danger) return "is-danger"
+
+    if (props.info) return "is-info"
+
+    return "is-primary"
+}
+
+const buttonClasses = computed(() => {
+
+    let classes = ["button", buttonVariant()]
+
+    if (!props.solid) {
+        classes.push("is-light")
+        classes.push("is-outlined")
+    }
+
+    if (props.loading) {
+        classes.push("is-loading")
+    }
+
+    if (props.small) {
+        classes.push("is-small")
+    }
+
+    return classes    
+
+})
+
 </script>
 <template>
-    <router-link :to="to.toString()" v-bind="props">
-        <slot></slot>
+    <router-link 
+        :to="to.toString()"
+        :class="buttonClasses"
+        @click="emit('click')"
+        :tag="(props.button ? 'button' : 'a')">
+        <span v-if="icon" :class="['icon', { 'is-small': small }]">
+            <span class="material-icons">{{ icon }}</span>
+        </span>
+        <span v-if="!iconOnly">
+            <slot></slot>
+        </span>
     </router-link>
 </template>

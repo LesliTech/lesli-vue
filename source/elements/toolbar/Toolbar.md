@@ -1,3 +1,12 @@
+<style lang="scss">
+    @import "../../.vitepress/theme/stylesheets/pages/lesli-vue.scss";
+</style>
+<script setup>
+    //import {  } from "lesli-vue/components"
+    //import {  } from "lesli-vue/composables"
+    import { LesliToolbar } from "lesli-vue/elements"
+</script>
+
 # Toolbar
 This component provides a standard layout for adding search and filter elements. It contains a search input for general queries and a couple of slots in case you want to add extra HTML elements. It is designed mainly to be used in the **index** views.
 
@@ -11,9 +20,7 @@ This component is imported automatically from the core, so you do not have to de
 
 **Result:**
 
-```raw
 <lesli-toolbar></lesli-toolbar>
-```
 
 
 ### Props
@@ -68,3 +75,16 @@ If you want to add extra HTML elements to the toolbar (for example, an autocompl
         </div>
     </component-toolbar>
 ```
+
+<component-toolbar>
+    <div class="control">
+        <div class="select">
+            <select name="projects-filters-per-page">
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+    </div>
+</component-toolbar>

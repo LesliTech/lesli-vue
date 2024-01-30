@@ -35,7 +35,6 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref, reactive, onMounted, watch, computed, getCurrentInstance } from "vue"
 import { useRouter } from "vue-router"
 
 const router = useRouter()

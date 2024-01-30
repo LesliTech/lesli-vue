@@ -32,7 +32,9 @@ Building a better future, one line of code at a time.
 
 // · 
 import axios from "axios"
-import debug from "lesli-js/debug/browser"
+//import debug from "lesli-js/debug/browser"
+
+const debug = {}
 
 
 // · 
