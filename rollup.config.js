@@ -68,7 +68,7 @@ export default [{
         commonjs()
     ],
     external: ["axios", "dayjs", "dayjs/plugin/utc.js", "dayjs/plugin/timezone.js"]
-}/*, {
+}, {
     input: "source/components/index.js",
     output: [{
         format: "esm",
@@ -79,5 +79,6 @@ export default [{
     }],
     plugins: [
         vue(), peerDepsExternal()
-    ]
-}*/]
+    ],
+    external: ["vue", "apexcharts"]
+}]

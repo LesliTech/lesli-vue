@@ -29,7 +29,7 @@ Building a better future, one line of code at a time.
 // · 
 */
 
-import LesliChartLine from "./charts/line/line.vue"
+import ChartLine from "./charts/line/line.vue"
 // import lesliChartBar from "./charts/bar/bar.vue"
 
 // import editorRichTextViewer from "./editors/richtext-viewer.vue"
@@ -40,6 +40,6 @@ export {
     // editorRichTextViewer, 
     // editorRichText, 
     // editorKeypad,
-    LesliChartLine,
+    ChartLine,
     // lesliChartBar
 }

@@ -35,7 +35,7 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref, computed, useSlots } from "vue"
+import { ref, useSlots } from "vue"
 import "./Table.scss";
 
 // · 

@@ -34,7 +34,7 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref, reactive, onMounted, computed } from "vue"
+import { ref } from "vue"
 import "./Toolbar.scss";
 
 
@@ -80,13 +80,6 @@ function clearSearch(){
     text.value = ''
     emit("search", text.value)
 }
-
-
-// · Initializing
-onMounted(() => {
-
-})
-
 </script>
 <template>
     <div class="component-toolbar">
