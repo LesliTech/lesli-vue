@@ -37,8 +37,8 @@ import LesliButton from "./button/Button.vue"
 // // import lesliElementCalendar from "./calendar/Calendar.vue"
 import LesliCard from "./card/Card.vue"
 // // import lesliElementCollapse from "./collapse/Collapse.vue"
-// // import lesliElementColumn from "./columns/Column.vue"
-// // import lesliElementColumns from "./columns/Columns.vue"
+import LesliColumn from "./columns/Column.vue"
+import LesliColumns from "./columns/Columns.vue"
 // // import lesliElementControl from "./control/Control.vue"
 // // import lesliElementDropdown from "./dropdown/Dropdown.vue"
 import LesliEmpty from "./empty/Empty.vue"
@@ -71,8 +71,8 @@ export {
     // lesliElementCalendar, 
     LesliCard,
     // lesliElementCollapse, 
-    // lesliElementColumn,
-    // lesliElementColumns,
+    LesliColumn,
+    LesliColumns,
     // lesliElementControl, 
     // lesliElementDropdown, 
     LesliEmpty, 
