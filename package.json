@@ -34,11 +34,15 @@
         "./elements": "./dist/elements.mjs"
     },
     "dependencies": {
-        "lesli-js": "0.5.0",
+
+        "trix": "2.0.8",
+        "mermaid": "10.3.0",
+        "remixicon": "3.5.0",
+        "apexcharts": "3.45.2",
+
         "axios": "1.6.5",
         "dayjs": "1.11.10",
-        "trix": "2.0.8",
-        "apexcharts": "3.45.2"
+        "lesli-js": "0.5.0"
     },
     "devDependencies": {
 

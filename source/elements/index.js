@@ -56,8 +56,8 @@ import LesliPagination from "./pagination/Pagination.vue"
 // // import lesliElementPanel from "./panel/Panel.vue"
 // // import lesliElementSelect from "./select/Select.vue"
 import LesliTable from "./table/Table.vue"
-// // import lesliElementTabs from "./tabs/Tabs.vue"
-// // import lesliElementTabItem from "./tabs/TabItem.vue"
+import LesliTabs from "./tabs/Tabs.vue"
+import LesliTabItem from "./tabs/TabItem.vue"
 // // import lesliElementToggle from "./toggle/Toggle.vue"
 import LesliToolbar from "./toolbar/Toolbar.vue"
 // // import lesliElementFileUploader from "./fileUploader/FileUploader.vue"
@@ -90,8 +90,8 @@ export {
     // lesliElementPanel, 
     // lesliElementSelect, 
     LesliTable,
-    // lesliElementTabs, 
-    // lesliElementTabItem, 
+    LesliTabs, 
+    LesliTabItem, 
     // lesliElementToggle, 
     LesliToolbar,
     // lesliElementFileUploader
