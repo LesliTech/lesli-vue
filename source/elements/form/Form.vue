@@ -35,7 +35,7 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref, watch, onMounted } from "vue"
+import { ref, onMounted } from "vue"
 
 
 // · defining emits

@@ -80,5 +80,5 @@ export default [{
     plugins: [
         vue(), peerDepsExternal()
     ],
-    external: ["vue", "apexcharts"]
+    external: ["vue", "apexcharts", "trix"]
 }]

@@ -18,18 +18,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Your Smart Business Assistant. 
+Lesli · Ruby on Rails SaaS Development Framework.
 
 Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://lesli.tech
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
-// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
+// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
 
 
@@ -39,8 +38,8 @@ import { ref, reactive, onMounted, watch, getCurrentInstance } from "vue"
 
 
 // · import & define local components
-import Trix from 'trix'
-import 'trix/dist/trix.css'
+import Trix from "trix"
+import "trix/dist/trix.css"
 
 
 // · defining emits

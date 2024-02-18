@@ -33,12 +33,12 @@ import ChartLine from "./charts/line/line.vue"
 // import lesliChartBar from "./charts/bar/bar.vue"
 
 // import editorRichTextViewer from "./editors/richtext-viewer.vue"
-// import editorRichText from "./editors/richtext.vue"
+import editorRichText from "./editors/richtext.vue"
 // import editorKeypad from "./editors/keypad.vue"
 
 export { 
     // editorRichTextViewer, 
-    // editorRichText, 
+    editorRichText, 
     // editorKeypad,
     ChartLine,
     // lesliChartBar

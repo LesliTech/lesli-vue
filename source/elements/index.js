@@ -39,10 +39,13 @@ import LesliCard from "./card/Card.vue"
 // // import lesliElementCollapse from "./collapse/Collapse.vue"
 import LesliColumn from "./columns/Column.vue"
 import LesliColumns from "./columns/Columns.vue"
-// // import lesliElementControl from "./control/Control.vue"
+
+import LesliForm from "./form/Form.vue"
+import LesliControl from "./control/Control.vue"
 // // import lesliElementDropdown from "./dropdown/Dropdown.vue"
+import LesliSelect from "./select/Select.vue"
+
 import LesliEmpty from "./empty/Empty.vue"
-// // import lesliElementForm from "./form/Form.vue"
 import LesliHeader from "./header/Header.vue"
 // // import lesliElementIcon from "./icon/Icon.vue"
 // // import lesliElementInput from "./input/Input.vue"
@@ -53,12 +56,12 @@ import LesliLoading from "./loading/Loading.vue"
 // // import lesliElementNavbar from "./navbar/Navbar.vue"
 // // import lesliElementNavigationList from "./navigation/NavigationList.vue"
 import LesliPagination from "./pagination/Pagination.vue"
-// // import lesliElementPanel from "./panel/Panel.vue"
-// // import lesliElementSelect from "./select/Select.vue"
+import LesliPanel from "./panel/Panel.vue"
+
 import LesliTable from "./table/Table.vue"
 import LesliTabs from "./tabs/Tabs.vue"
 import LesliTabItem from "./tabs/TabItem.vue"
-// // import lesliElementToggle from "./toggle/Toggle.vue"
+import LesliToggle from "./toggle/Toggle.vue"
 import LesliToolbar from "./toolbar/Toolbar.vue"
 // // import lesliElementFileUploader from "./fileUploader/FileUploader.vue"
 
@@ -73,10 +76,10 @@ export {
     // lesliElementCollapse, 
     LesliColumn,
     LesliColumns,
-    // lesliElementControl, 
+    LesliControl, 
     // lesliElementDropdown, 
     LesliEmpty, 
-    // lesliElementForm, 
+    LesliForm, 
     LesliHeader, 
     // lesliElementIcon, 
     // lesliElementInput, 
@@ -87,12 +90,12 @@ export {
     // lesliElementNavbar, 
     // lesliElementNavigationList, 
     LesliPagination, 
-    // lesliElementPanel, 
-    // lesliElementSelect, 
+    LesliPanel, 
+    LesliSelect, 
     LesliTable,
     LesliTabs, 
     LesliTabItem, 
-    // lesliElementToggle, 
+    LesliToggle, 
     LesliToolbar,
     // lesliElementFileUploader
 }
