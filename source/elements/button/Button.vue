@@ -34,7 +34,7 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { computed, useSlots } from "vue"
+import { ref, computed, useSlots, onMounted } from "vue"
 
 
 // · 
@@ -80,13 +80,10 @@ const props = defineProps({
         type: Boolean,
         default: false,
         required: false
-    },
-    iconOnly: {
-        type: Boolean,
-        default: false,
-        required: false
     }
 })
+
+const iconOnly = ref(false)
 
 function buttonVariant() {
 
@@ -118,6 +115,13 @@ const buttonClasses = computed(() => {
 
     return classes    
 
+})
+
+onMounted(() => {
+    // if slots has default method, slot is not empty, maybe it has text
+    if (!('default' in slots) && props.icon) {
+        iconOnly.value = true
+    }
 })
 
 </script>

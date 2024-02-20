@@ -47,21 +47,16 @@ const emit = defineEmits(['click']);
 
 // · defining props
 const props = defineProps({
-    button: {
-        type: Boolean,
-        required: false
-    },
     to: {
         type: Object,
         required: true
     },
-    icon: {
-        type: String,
+    button: {
+        type: Boolean,
         required: false
     },
-    loading: {
-        type: Boolean,
-        default: false,
+    icon: {
+        type: String,
         required: false
     },
     solid: {
@@ -85,11 +80,6 @@ const props = defineProps({
         required: false
     },
     small: {
-        type: Boolean,
-        default: false,
-        required: false
-    },
-    iconOnly: {
         type: Boolean,
         default: false,
         required: false
@@ -126,6 +116,13 @@ const buttonClasses = computed(() => {
 
     return classes    
 
+})
+
+onMounted(() => {
+    // if slots has default method, slot is not empty, maybe it has text
+    if (!('default' in slots) && props.icon) {
+        iconOnly.value = true
+    }
 })
 
 </script>
