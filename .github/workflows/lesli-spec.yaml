@@ -103,9 +103,13 @@ jobs:
       - name: Run composables tests
         run: npm run test
 
+      # Run Vue tests
+      - name: Generate coverage report
+        run: npm run test:coverage
 
       # Code coverage
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}        
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: LesliTech/lesli-vue
