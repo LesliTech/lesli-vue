@@ -47,7 +47,7 @@ on:
     branches: [master, production]
 
 
-  # execute this workflow when push to master - temporary, no one should push to master :D
+  # execute this workflow when pushing to master—temporarily, nobody should push to master :D
   push:
     branches: [master]
 
