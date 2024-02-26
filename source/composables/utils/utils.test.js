@@ -1,4 +1,4 @@
-/**
+/*
 Lesli
 
 Copyright (c) 2023, Lesli Technologies, S. A.
@@ -22,16 +22,16 @@ Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://www.lesli.dev
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
 */
 
-/*
+
 // · Import frameworks, libraries & tools
-import { expect } from "chai"
+import { describe, it } from "vitest"
 
 
 // · plugins to be tested
@@ -47,12 +47,12 @@ describe("VUE/COMPOSABLES/UTILS", () => {
 
     describe("Initials", () => {
         
-        it("Get initials from word", () => {
+        it("Get initials from word", ({ expect }) => {
             var initials = UTILS.initials("Lesli")
             expect(initials).to.equal("L")
         });
 
-        it("Get initials from words", () => {
+        it("Get initials from words", ({ expect }) => {
             var initials = UTILS.initials("Lesli", "Tech")
             expect(initials).to.equal("LT")
         });
@@ -61,12 +61,12 @@ describe("VUE/COMPOSABLES/UTILS", () => {
 
     describe("Singularize", () => {
         
-        it("Get singular word of birds", () => {
+        it("Get singular word of birds", ({ expect }) => {
             var initials = UTILS.singularize("Birds")
             expect(initials).to.equal("Bird")
         })
 
-        it("Get singular word of Companies", () => {
+        it("Get singular word of Companies", ({ expect }) => {
             var initials = UTILS.singularize("Companies")
             expect(initials).to.equal("Company")
         })
@@ -74,14 +74,3 @@ describe("VUE/COMPOSABLES/UTILS", () => {
     });
 
 });
-*/
-
-
-import { describe, it } from 'vitest'
-
-// All tests within this suite will be run in parallel
-describe.concurrent('suite', () => {
-  it('concurrent test 1', async ({ expect }) => { /* ... */ })
-  it('concurrent test 2', async ({ expect }) => { /* ... */ })
-  it.concurrent('concurrent test 3', async ({ expect }) => { /* ... */ })
-})
