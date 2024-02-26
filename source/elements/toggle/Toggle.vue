@@ -44,7 +44,6 @@ const emit = defineEmits(['update:modelValue', 'change']);
 
 // · 
 const props = defineProps({
-    // · this value is used to set the value of the input type checkbox.
     modelValue: {
         type: Boolean,
         required: true,
@@ -55,11 +54,11 @@ const props = defineProps({
     },
     disabledText:{
         type: String,
-        default: I18n.t("core.shared.view_text_no")
+        default: ""
     },
     enabledText:{
         type: String,
-        default: I18n.t("core.shared.view_text_yes")
+        default: ""
     },
     showText: {
         type: Boolean,

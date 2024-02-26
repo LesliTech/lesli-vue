@@ -1,4 +1,4 @@
-/**
+/*
 Lesli
 
 Copyright (c) 2023, Lesli Technologies, S. A.
@@ -22,42 +22,19 @@ Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://www.lesli.dev
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
 */
 
-/*
-// · Import frameworks, libraries & tools
-import { expect } from "chai"
 
-
-// · plugins to be tested
-import { useLesliDate } from "../../composables"
+// · 
+import { defineConfig, configDefaults } from "vitest/config"
 
 
 // · 
-const LesliDate = useLesliDate()
+export default defineConfig({
 
-
-// · 
-describe("COMPOSABLES/DATE", () => {
-
-    describe("Build a DATE from new Date()", () => {
-        var date = new LesliDate
-        expect(date.date().toString()).to.be.a("string");
-    })
 });
-*/
-
-
-import { describe, it } from 'vitest'
-
-// All tests within this suite will be run in parallel
-describe.concurrent('suite', () => {
-  it('concurrent test 1', async ({ expect }) => { /* ... */ })
-  it('concurrent test 2', async ({ expect }) => { /* ... */ })
-  it.concurrent('concurrent test 3', async ({ expect }) => { /* ... */ })
-})

@@ -35,6 +35,7 @@ import { useLesliMsg } from "./msg/msg"
 import { useLesliUrl } from "./url/url"
 import { useLesliDate } from "./date/date"
 import { useLesliHttp } from "./http/http";
+import { useLesliDebug } from "./debug/debug";
 import { useLesliUtils } from "./utils/utils";
 import { useLesliDialog } from "./dialog/dialog";
 
@@ -45,6 +46,7 @@ export {
     useLesliUrl,
     useLesliDate,
     useLesliHttp,
+    useLesliDebug,
     useLesliUtils,
     useLesliDialog
 }

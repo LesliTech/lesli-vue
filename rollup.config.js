@@ -38,14 +38,14 @@ import commonjs from 'rollup-plugin-commonjs';
 
 
 // · 
-export default [{
+const elements = {
     input: "source/elements/index.js",
     output: [{
         format: "esm",
         file: "dist/elements.mjs",
     }, {
         format: "cjs",
-        file: "dist/elements.js",
+        file: "dist/elements.cjs",
     }],
     plugins: [
         vue(),
@@ -53,14 +53,18 @@ export default [{
         peerDepsExternal()
     ],
     external: ["vue", "vue-router"]
-}, {
+}
+
+
+// · 
+const composables = {
     input: "source/composables/index.js",
     output: [{
         format: "esm",
         file: "dist/composables.mjs"
     }, {
         format: "cjs",
-        file: "dist/composables.js"
+        file: "dist/composables.cjs"
     }],
     plugins: [
         vue(),
@@ -68,17 +72,25 @@ export default [{
         commonjs()
     ],
     external: ["axios", "dayjs", "dayjs/plugin/utc.js", "dayjs/plugin/timezone.js"]
-}, {
+}
+
+
+// · 
+const components = {
     input: "source/components/index.js",
     output: [{
         format: "esm",
         file: "dist/components.mjs"
     }, {
         format: "cjs",
-        file: "dist/components.js"
+        file: "dist/components.cjs"
     }],
     plugins: [
         vue(), peerDepsExternal()
     ],
     external: ["vue", "apexcharts", "trix"]
-}]
+}
+
+
+// · 
+export default [elements, components, composables]

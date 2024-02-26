@@ -1,43 +1,50 @@
 // · 
+
+import dayjs from "dayjs";
+
 class LesliDebug {
 
     m(message, modulo=null, level=null) {
-        return utils.buildMessage(message, modulo, level)
+        return this.#buildMessage(message, modulo, level)
     }
 
     // · write information message
     log(message, modulo = null) {
-        console.log(utils.buildMessage(message, modulo, "log"))
+        console.log(this.#buildMessage(message, modulo, "log"))
     }
 
     // · write information message
     msg(message, modulo = null) {
-        console.log(utils.buildMessage(message, modulo, "msg"))
+        console.log(this.#buildMessage(message, modulo, "msg"))
     }
 
     // · write informatie message
     info(message, modulo = null) {
-        console.info("%c"+utils.buildMessage(message, modulo, "info"), utils.stylesForBrowser("info"))
+        console.info("%c"+this.#buildMessage(message, modulo, "info"), this.#stylesForBrowser("info"))
     }
 
     // · write success message
     success(message, modulo = null) {
-        console.log(utils.buildMessage(message, modulo, "msg"))
+        console.log(this.#buildMessage(message, modulo, "msg"))
     }
 
     // · write warning message
     warn(message, modulo = null) {
-        console.warn("%c"+utils.buildMessage(message, modulo, "warn"), utils.stylesForBrowser("warn"))
+        console.warn("%c"+this.#buildMessage(message, modulo, "warn"), this.#stylesForBrowser("warn"))
     }
 
     // · write warning message
     error(message, modulo = null) {
-        console.error("%c"+utils.buildMessage(message, modulo, "error"), utils.stylesForBrowser("error"))
+        console.error("%c"+this.#buildMessage(message, modulo, "error"), this.#stylesForBrowser("error"))
     }
 
     // · write warning message
     fatal(message, modulo = null) {
-        console.error("%c"+utils.buildMessage(message, modulo, "error"), utils.stylesForBrowser("fatal"))
+        console.error("%c"+this.#buildMessage(message, modulo, "error"), this.#stylesForBrowser("fatal"))
+    }
+
+    hr(size=10) {
+        console.log('-·-     '.repeat(size))
     }
 
     message(title, messages, more_information=null) {
@@ -128,7 +135,7 @@ class LesliDebug {
         // desire output format
         // [2010-01-17 11:43:37] [ERROR] (cheese module) - Cheese is too ripe!
         // [2010-01-17 11:43:37] [FATAL] (cheese module) - Cheese was breeding ground for listeria.
-        let newMessage = `[${this.buildDate()}] [${level.toUpperCase()}]`
+        let newMessage = `[${this.#buildDate()}] [${level.toUpperCase()}]`
 
         if (module) {
             newMessage += ` (${module})`
@@ -167,6 +174,13 @@ class LesliDebug {
         style += "line-height:" + lineheight
 
         return style
+
+    }
+
+    // · 
+    #buildDate() {
+
+        return dayjs().format("MM/DD HH:mm").toString()
 
     }
 
