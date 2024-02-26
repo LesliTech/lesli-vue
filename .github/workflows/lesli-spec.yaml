@@ -61,6 +61,7 @@ on:
   workflow_dispatch:
 
 jobs:
+
   test:
     name: Test workflow for lesli-vue
     runs-on: ubuntu-latest
@@ -95,19 +96,16 @@ jobs:
 
 
       # Run Vue tests
-      - name: Run composables tests
+      - name: Run tests
         run: npm run test
 
 
-      # Run Vue tests
-      - name: Run composables tests
-        run: npm run test
-
-      # Run Vue tests
+      # Run Vue coverage
       - name: Generate coverage report
         run: npm run test:coverage
 
-      # Code coverage
+
+      # Collect test coverage
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:

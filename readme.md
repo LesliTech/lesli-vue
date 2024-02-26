@@ -5,14 +5,21 @@
 
 
 <hr/>
-    <p align="center">
-        <a href="https://badge.fury.io/js/lesli-vue">
-            <img src="https://badge.fury.io/js/lesli-vue.svg" alt="npm version" height="18">
-        </a>
-    </p>
+<p align="center">
+    <a href="https://badge.fury.io/js/lesli-vue">
+        <img alt="npm version" height="20" src="https://badge.fury.io/js/lesli-vue.svg" />
+    </a>
+    <a href="https://sonarcloud.io/summary/new_code?id=LesliTech_lesli-vue">
+        <img alt="sonar cloud" height="20" src="https://sonarcloud.io/api/project_badges/measure?project=LesliTech_lesli-vue&metric=alert_status" />
+    </a>
+    <a href="https://codecov.io/gh/LesliTech/lesli-vue" > 
+        <img alt="code coverage" height="20" src="https://codecov.io/gh/LesliTech/lesli-vue/graph/badge.svg?token=HTDM60ZRG8"/> 
+    </a>
+</p>
 <hr/>
 
-This library was originally developed for seamless integration with the Lesli framework. However, its versatility allows for utilization in various projects beyond Lesli. Stay tuned for the upcoming documentation.
+
+This library was initially developed for seamless integration with the Lesli framework. However, its versatility allows for utilization in various projects beyond Lesli. Stay tuned for the upcoming documentation.
 
 
 <br />
@@ -26,30 +33,25 @@ npm i lesli-vue
 
 ```js
 // Import the element, component or composable into your vue app
-import { lesliElementButton } from "lesli-vue/elements"
+import { lesliButton } from "lesli-vue/elements"
 ```
 
 ```html
 <!-- Simple usage --> 
-<lesli-element-button>
+<lesli-button>
     My pretty button
-</lesli-element-button>
+</lesli-button>
 
 <!-- Button with icon --> 
-<lesli-element-button icon="save">
+<lesli-button icon="save">
     My pretty button with an icon
-</lesli-element-button>
+</lesli-button>
 ```
 
 
-<br />
-
 ### Documentation
-* [Roadmap](./docs/roadmap.md)
-* [documentation](https://www.lesli.dev/documentation/)
+* [documentation](https://www.lesli.dev/vue/)
 
-
-<br />
 
 ### Get in touch
 
@@ -57,8 +59,6 @@ import { lesliElementButton } from "lesli-vue/elements"
 * [Email: hello@lesli.tech](hello@lesli.tech)
 * [Twitter: @LesliTech](https://twitter.com/LesliTech)
 
-
-<br />
 
 ### License
 -------
