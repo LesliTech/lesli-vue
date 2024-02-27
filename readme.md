@@ -50,7 +50,7 @@ import { lesliButton } from "lesli-vue/elements"
 
 
 ### Documentation
-* [https://www.lesli.dev/vue/](https://www.lesli.dev/vue/)
+[https://www.lesli.dev/vue/](https://www.lesli.dev/vue/)
 
 
 ### Get in touch
