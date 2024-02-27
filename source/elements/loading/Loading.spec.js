@@ -62,7 +62,7 @@ describe("ELEMENTS/LOADING", () => {
     it("Should render component icon only", () => {
         const component = mount(Loading, {
             props: {
-                icon: true
+                text: ""
             }
         });
         expect(component.find(".ml-3").exists()).toBeFalsy();

@@ -51,7 +51,7 @@ const props = defineProps({
                 <hr/><hr/><hr/><hr/>
             </span>
             <span 
-                v-if="!(props.text || props.text=='')"
+                v-if="props.text!=''"
                 :class="['is-size-'+size, 'ml-3']">
                 {{ props.text }}...
             </span>
