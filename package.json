@@ -69,7 +69,8 @@
     },
     "scripts": {
         "build": "rollup -c",
-        "test": "vitest run --reporter=verbose --dom",
-        "test:coverage": "vitest run --coverage"
+        "test": "vitest run --dom",
+        "test:report": "vitest run --reporter=verbose --dom",
+        "test:coverage": "vitest run --coverage --dom"
     }
 }
