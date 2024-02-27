@@ -32,29 +32,17 @@ Building a better future, one line of code at a time.
 */
 
 
-
-// · import vue tools
-
-
-
 // · defining props
 const props = defineProps({
     size: {
         type: Number,
         default: 5
     },
-    icon: {
-        type: Boolean,
-        default: false
+    text: {
+        type: String,
+        default: "Loading"
     }
 })
-
-
-// · defining variables
-const translations = {
-    shared: I18n.t('core.shared')
-}
-
 </script>
 <template>
     <div class="lesli-loading has-text-centered">
@@ -63,10 +51,13 @@ const translations = {
                 <hr/><hr/><hr/><hr/>
             </span>
             <span 
-                v-if="!icon"
+                v-if="!(props.text || props.text=='')"
                 :class="['is-size-'+size, 'ml-3']">
-                {{ translations.shared.view_text_loading }}...
+                {{ props.text }}...
             </span>
         </p>
     </div>
 </template>
+<style lang="scss">
+    @import "./Loading.scss";
+</style>

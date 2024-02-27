@@ -35,7 +35,11 @@
             "require": "./dist/composables.cjs"
         },
         "./components": "./dist/components.mjs",
-        "./elements": "./dist/elements.mjs"
+        "./elements": "./dist/elements.mjs",
+        "./dist/*.css": {
+            "import": "./dist/*.css",
+            "require": "./dist/*.css"
+        }
     },
     "dependencies": {
         "trix": "2.0.10",
@@ -57,16 +61,15 @@
         "rollup-plugin-peer-deps-external": "2.2.4",
 
         "@vue/test-utils": "2.4.4",
-        "@vue/cli-service": "5.0.8",
-        "@vue/cli-plugin-babel": "5.0.8",
-        "@vue/cli-plugin-unit-mocha": "5.0.8",
 
         "vitest": "1.3.0",
-        "@vitest/coverage-v8":"1.3.0"
+        "@vitejs/plugin-vue":"5.0.4",
+        "@vitest/coverage-v8":"1.3.0",
+        "happy-dom": "13.6.2"
     },
     "scripts": {
         "build": "rollup -c",
-        "test": "vitest run --reporter=verbose",
+        "test": "vitest run --reporter=verbose --dom",
         "test:coverage": "vitest run --coverage"
     }
 }

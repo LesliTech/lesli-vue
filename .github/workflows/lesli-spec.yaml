@@ -28,14 +28,6 @@
 # // · 
 
 
-
-# -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-
-# PLEASE DO NOT MODIFY THIS FILE ON THE CORE,
-# THIS FILE SHOULD BE MODIFIED ON THE LesliTech/LesliGithub REPOSITORY
-# -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-
-
-
-
 # Specs for Lesli Core
 # -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-   -·-
 name: "Lesli specs workflow"
