@@ -61,7 +61,12 @@ const props = defineProps({
         default: false,
         required: false
     },
-    danger: {
+    info: {
+        type: Boolean,
+        default: false,
+        required: false
+    },
+    success: {
         type: Boolean,
         default: false,
         required: false
@@ -71,7 +76,7 @@ const props = defineProps({
         default: false,
         required: false
     },
-    info: {
+    danger: {
         type: Boolean,
         default: false,
         required: false
@@ -88,6 +93,8 @@ const iconOnly = ref(false)
 function buttonVariant() {
 
     if (props.warning) return "is-warning"
+
+    if (props.success) return "is-success"
 
     if (props.danger) return "is-danger"
 

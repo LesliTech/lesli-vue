@@ -41,6 +41,10 @@ const props = defineProps({
     text: {
         type: String,
         default: "Loading"
+    },
+    icon: {
+        type: Boolean,
+        default: false
     }
 })
 </script>
@@ -51,7 +55,7 @@ const props = defineProps({
                 <hr/><hr/><hr/><hr/>
             </span>
             <span 
-                v-if="props.text!=''"
+                v-if="!icon"
                 :class="['is-size-'+size, 'ml-3']">
                 {{ props.text }}...
             </span>

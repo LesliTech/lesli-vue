@@ -1,3 +1,7 @@
+<script setup>
+    import LesliTable from "./Table.vue"
+</script>
+
 # Table
 
 The table component globally and is meant to be used in together with the vue store, this component works in conjunction with pagination, loading and empty components. The state is meant to be managed by the vue stores.

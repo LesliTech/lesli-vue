@@ -1,5 +1,4 @@
 /*
-
 Lesli
 
 Copyright (c) 2023, Lesli Technologies, S. A.
@@ -23,7 +22,7 @@ Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://www.lesli.tech
+@website  https://www.lesli.dev
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
@@ -32,31 +31,29 @@ Building a better future, one line of code at a time.
 
 
 // · 
-.lesli-loading {
-    padding: 4rem 0;
-    .loading-animation {
-        display: inline-block;
-        position:relative;
-        height:18px;
-        width:18px;
-        hr {
-            border:0;
-            margin:0;
-            width:40%;
-            height:40%;
-            position:absolute;
-            border-radius:50%;
-            animation:assistant-chatbox-spin 2s ease infinite;
-            &:first-child { background:#19A68C; animation-delay: -1.5s }
-            &:nth-child(2){ background:#F63D3A; animation-delay: -1.0s }
-            &:nth-child(3){ background:#FDA543; animation-delay: -0.5s }
-            &:last-child {  background:#193B48 }
-        }
-        @keyframes assistant-chatbox-spin{
-            0%,100%{transform:translate(0)}
-            25%{transform:translate(160%)}
-            50%{transform:translate(160%, 160%)}
-            75%{transform:translate(0, 160%)}
-        }        
-    }
-}
+import { expect } from "vitest";
+import { mount } from "@vue/test-utils";
+
+
+// · 
+import Button from "./Button.vue";
+
+
+// · 
+describe("ELEMENTS/BUTTON", () => {
+
+    it("Should render component with defaults", () => {
+        const component = mount(Button, {
+            props: {
+            },
+            slots: {
+                default: "My button"
+            }
+        });
+
+        expect(component.find(".button").text()).toContain("My button");
+        expect(component.find(".button").classes()).toContain("is-primary")
+        expect(component.find(".button").classes()).toContain("is-light")
+        expect(component.find(".button").classes()).toContain("is-outlined")
+    })
+})

@@ -1,11 +1,13 @@
 # Vue plugin url
 Url constructor for The Lesli Framework, this plugin build an url object to be used in Lesli projects.
 
-## Initialize
+
+### Initialize
 This plugin initializes automatically when the app is loaded and is included in every standard vue app.
 It can be accessed from js (vue & pinia) like **this.url** and from html like **url**.
 
-## Methods
+
+### Methods
 This plugin uses method chain and every method has his own set of parameters
 
 | Method | Params       | Description |
@@ -17,16 +19,17 @@ This plugin uses method chain and every method has his own set of parameters
 | filter | columns:Object | Add query param to indicate to the server an special param to filter data. |
 
 
-## Filter 
+### Filter 
 The filter method allows the user to send special parameters to the server to filter the data. This method should be used with care and DO NOT overuse it by sending too many parameters to the server.
 
 If your controller requires too many filter parameters, consider making it a search controller.
 
 
-## Custom extensions 
+### Custom extensions 
 You can request special content type application data by changing the extension of the resource you are requestiong data, using one of the built-in mehotds like __.html()__, __.json()__, __.pdf()__, etc. or send a extension name as parameter to the .toString("xml) method.
 
-### Quick reference
+
+### Examples:
 
 ```js
     this.url.to("/admin/users")
@@ -93,10 +96,9 @@ You can request special content type application data by changing the extension 
     this.url.driver("calendars/default").filter({ events: ['help', 'focus'], categories: ['cat1', 'cat2'] })
     //-> https://www.lesli.cloud/driver/calendar.json?f[events]=help,focus&f[categories]=cat1,cat2
 
-
-    this.url.focus("tasks").user()
-    this.url.focus("tasks").user(1)
 ```
 
-
-
+<script setup>
+import { useLesliUrl } from "./url"
+const URL = useLesliUrl()
+</script>
