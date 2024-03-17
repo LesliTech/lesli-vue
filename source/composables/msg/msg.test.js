@@ -36,7 +36,7 @@ import { spy } from "sinon";
 
 
 // · 
-import { useLesliMsg } from "./Msg.js"
+import { useLesliMsg } from "../../composables"
 
 
 // · 
