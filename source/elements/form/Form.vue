@@ -61,6 +61,7 @@ const props = defineProps({
 <template>
     <form :class="[{ 'lesli-form': !props.flat }]" @submit.prevent="emit('submit')">
         <fieldset :disabled="!editable">
+            <legend></legend>
             <slot></slot>
         </fieldset>
     </form>
