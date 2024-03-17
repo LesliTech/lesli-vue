@@ -36,6 +36,7 @@ Building a better future, one line of code at a time.
 
 // · import vue tools
 import { useRouter } from "vue-router"
+import "./Header.scss";
 
 const router = useRouter()
 

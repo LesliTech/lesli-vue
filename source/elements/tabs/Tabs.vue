@@ -35,6 +35,7 @@ Building a better future, one line of code at a time.
 
 // · import vue tools
 import { ref, onMounted, computed, useSlots, provide } from "vue"
+import "./Tabs.scss";
 
 
 // · gettings slots

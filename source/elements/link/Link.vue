@@ -36,7 +36,6 @@ Building a better future, one line of code at a time.
 // · import vue tools
 import { computed, useSlots } from "vue"
 
-
 // · 
 const slots = useSlots()
 
@@ -48,95 +47,28 @@ const emit = defineEmits(['click']);
 // · defining props
 const props = defineProps({
     to: {
-        type: Object,
+        type: String,
         required: true
     },
     button: {
         type: Boolean,
-        required: false
+        default: false
     },
-    icon: {
-        type: String,
-        required: false
-    },
-    solid: {
-        type: Boolean,
-        default: false,
-        required: false
-    },
-    danger: {
-        type: Boolean,
-        default: false,
-        required: false
-    },
-    warning: {
-        type: Boolean,
-        default: false,
-        required: false
-    },
-    info: {
-        type: Boolean,
-        default: false,
-        required: false
-    },
-    small: {
-        type: Boolean,
-        default: false,
-        required: false
-    }
-})
-
-function buttonVariant() {
-
-    if (props.warning) return "is-warning"
-
-    if (props.danger) return "is-danger"
-
-    if (props.info) return "is-info"
-
-    return "is-primary"
-}
-
-const buttonClasses = computed(() => {
-
-    let classes = ["button", buttonVariant()]
-
-    if (!props.solid) {
-        classes.push("is-light")
-        classes.push("is-outlined")
-    }
-
-    if (props.loading) {
-        classes.push("is-loading")
-    }
-
-    if (props.small) {
-        classes.push("is-small")
-    }
-
-    return classes    
-
-})
-
-onMounted(() => {
-    // if slots has default method, slot is not empty, maybe it has text
-    if (!('default' in slots) && props.icon) {
-        iconOnly.value = true
-    }
+    icon:{},
+    loading: {},
+    solid: {},
+    info: {},
+    success: {},
+    warning: {},
+    danger: {},
+    small: {}
 })
 
 </script>
 <template>
-    <router-link 
-        :to="to.toString()"
-        :class="buttonClasses"
-        @click="emit('click')"
-        :tag="(props.button ? 'button' : 'a')">
-        <span v-if="icon" :class="['icon', { 'is-small': small }]">
-            <span class="material-icons">{{ icon }}</span>
-        </span>
-        <span v-if="!iconOnly">
+    <router-link :to="props.to.toString()">
+        <component v-bind="props" :is="props.button ? 'lesli-button' : 'span'">
             <slot></slot>
-        </span>
+        </component>
     </router-link>
 </template>

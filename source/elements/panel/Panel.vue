@@ -34,6 +34,7 @@ Building a better future, one line of code at a time.
 
 // · import vue tools
 import { ref, onMounted, watch, computed } from "vue"
+import "./Panel.scss"
 
 
 // · 

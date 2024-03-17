@@ -33,56 +33,60 @@ Building a better future, one line of code at a time.
 // · 
 export function useLesliMsg() {
 
-    var activeMsg = 0
+    const durationDefault = 2800
 
-    function msg(text, type="success") {
+    function msg(text, type="success", duration=0) {
 
-        // messages in queue
-        activeMsg++
+        if (duration === 0) {
+            duration = durationDefault
+        }
 
-        // visible time of the message
-        var duration = 2800
+        console.log(duration)
 
         // create a new raw html div in the root of the html document
+        var toastContainer = document.getElementById("lesli-msg-container")
+
+        if (!toastContainer) {
+            toastContainer = document.createElement('div')
+            toastContainer.id = "lesli-msg-container"
+            toastContainer.className = 'lesli-msg'
+        }
+        //
+
+        var toastContent = document.createElement('div')
+        toastContent.className = 'lesli-msg-content'
         var toastEl = document.createElement('div')
+
 
         // build the message
         toastEl.innerHTML = text
-        toastEl.className = 'lesli-msg notification is-' + type
+        toastEl.classList.add("notification", `is-${type}`)
 
-        // use the count of the messages in queue to calculate the position of the new message
-        if (activeMsg > 0) {
-            toastEl.style.top = (52 * activeMsg) + 'px'
-        }
+        toastContent.appendChild(toastEl);
+        toastContainer.appendChild(toastContent)
 
         // show the new message component
-        document.body.appendChild(toastEl)
+        document.body.appendChild(toastContainer)
     
         // start counting to hide the message
         setTimeout(function () {
 
-            // remove messages from the queue
-            activeMsg--
-
             // hide message
-            toastEl.className += ' hide'
+            toastContent.classList.add("hide")
 
             // wait to remove the html from document, so the transition animation works
-            // maybe we should reset the timer every time here?
             setTimeout(()=>{
-                document.querySelectorAll('.lesli-msg.hide').forEach(el => {
-                    el.parentNode.removeChild(el)
-                })
-            }, 1000)
+                toastContent.parentNode.removeChild(toastContent)
+            }, 200)
             
         }, duration)
     }
 
     return {
-        info: (text) => msg(text, "info"),
-        danger: (text) => msg(text, "danger"),
-        success: (text) => msg(text, "success"),
-        warning: (text) => msg(text, "warning")
+        info: (text, duration=0) => msg(text, "info", duration),
+        danger: (text, duration=0) => msg(text, "danger", duration),
+        success: (text, duration=0) => msg(text, "success", duration),
+        warning: (text, duration=0) => msg(text, "warning", duration)
     }
 
 }

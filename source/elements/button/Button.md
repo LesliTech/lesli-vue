@@ -38,6 +38,20 @@ This component accepts one single slot for the button text.
 <hr />
 
 
+#### Button with link
+```html
+    <lesli-button to="www.lesli.dev">
+        My button
+    </lesli-button>
+```
+
+<lesli-button>
+    My button
+</lesli-button>
+
+<hr />
+
+
 #### Colors
 ```html
     <lesli-button>

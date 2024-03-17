@@ -133,7 +133,7 @@ onMounted(() => {
 
 </script>
 <template>
-    <button 
+    <button
         @click="emit('click')" 
         :class="buttonClasses">
         <span v-if="icon" :class="['icon', { 'is-small': small }]">
