@@ -34,7 +34,7 @@ Building a better future, one line of code at a time.
 // // import lesliElementAutocomplete from "./autocomplete/Autocomplete.vue"
 // // import lesliElementAvatar from "./avatar/Avatar.vue"
 import LesliButton from "./button/Button.vue"
-// // import lesliElementCalendar from "./calendar/Calendar.vue"
+import LesliCalendar from "./calendar/Calendar.vue"
 import LesliCard from "./card/Card.vue"
 // // import lesliElementCollapse from "./collapse/Collapse.vue"
 import LesliColumn from "./columns/Column.vue"
@@ -71,7 +71,7 @@ export {
     // lesliElementAutocomplete, 
     // lesliElementAvatar, 
     LesliButton,
-    // lesliElementCalendar, 
+    LesliCalendar, 
     LesliCard,
     // lesliElementCollapse, 
     LesliColumn,

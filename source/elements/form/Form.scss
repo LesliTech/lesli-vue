@@ -33,11 +33,17 @@ Building a better future, one line of code at a time.
 
 // · 
 .lesli-form {
-    fieldset {
-        padding: 1rem;
+    & > fieldset {
+        padding: 1.5rem 1rem;
         border-radius: 5px;
         //border: 1px solid #ccc;
         background-color: #fff;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        fieldset {
+            padding: 1.2rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
     }
 }

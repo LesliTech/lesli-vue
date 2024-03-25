@@ -52,7 +52,7 @@ const elements = {
         scss({ fileName: "elements.css" }),
         peerDepsExternal()
     ],
-    external: ["vue", "vue-router"]
+    external: ["vue", "vue-router", "v-calendar"]
 }
 
 
@@ -69,6 +69,7 @@ const composables = {
     plugins: [
         vue(),
         peerDepsExternal(),
+        scss({ fileName: "composables.css" }),
         commonjs()
     ],
     external: ["axios", "dayjs", "dayjs/plugin/utc.js", "dayjs/plugin/timezone.js"]
@@ -86,7 +87,9 @@ const components = {
         file: "dist/components.cjs"
     }],
     plugins: [
-        vue(), peerDepsExternal()
+        vue(), 
+        peerDepsExternal(),
+        scss({ fileName: "components.css" }),
     ],
     external: ["vue", "apexcharts", "trix"]
 }

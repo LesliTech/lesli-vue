@@ -18,25 +18,26 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Your Smart Business Assistant. 
+Lesli · Ruby on Rails SaaS Development Framework.
 
 Made with ♥ by https://www.lesli.tech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://lesli.tech
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
-// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
+// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
 
 
 // · import vue tools
-//import { ref, reactive, onMounted, watch, computed } from "vue"
-//import { SetupCalendar, Calendar, DatePicker } from 'v-calendar';
-import 'v-calendar/dist/style.css';
+import { ref, watch, onMounted } from "vue"
+import { DatePicker } from "v-calendar";
+import "v-calendar/style.css";
+import "./Calendar.scss"
+
 
 
 // · defining emits
@@ -46,7 +47,7 @@ const emit = defineEmits(['update:modelValue']);
 // · defining props
 const props = defineProps({
     modelValue: {
-        type: [Date, Object],
+        type: [Date, Object, String],
     },
     mode: {
         type: String,
@@ -71,29 +72,48 @@ const props = defineProps({
 })
 
 
-// ·
-const date = props.modelValue ? ref(props.modelValue) : ref(new Date())
+// · 
+const date = ref(null)
 
 
-// ·
-const dateRange = ref({
-    start: new Date(),
-    end: new Date()
+const masks = ref({
+    modelValue: 'YYYY-MM-DD',
+});
+
+// · 
+onMounted(() => {
+    setTimeout(() => {
+        date.value = props.modelValue
+    }, 200)
 })
-
 
 // ·
 watch(date, () => {
     emit('update:modelValue', date.value)
 })
 
-
-// ·
-watch(dateRange, () => {
-    emit('update:modelValue', dateRange.value)
-})
-
 </script>
 <template>
-
+    <DatePicker 
+        v-model="date" 
+        :mode="mode" 
+        :masks="masks"
+        class="lesli-calendar">
+        <template v-slot="{ inputValue, inputEvents }">
+            <div class="field lesli-element-calendar">
+                <p class="control has-icons-right">
+                    <input 
+                        class="input is-default"
+                        v-on="inputEvents"
+                        :value="placeholderValue ? placeholderValue : inputValue" 
+                    />
+                    <span class="icon is-small is-right">
+                        <span class="material-icons">
+                            calendar_month
+                        </span>
+                    </span>
+                </p>
+            </div>
+        </template>
+    </DatePicker>
 </template>

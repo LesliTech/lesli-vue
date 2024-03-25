@@ -1,4 +1,8 @@
-# Calendar
+<script setup>
+    import TextEditor from "./TextEditor.vue"
+</script>
+
+# Text Editor
 Provide a set of html view components to allow user work with date and time
 
 ## Props single date
@@ -13,12 +17,24 @@ Provide a set of html view components to allow user work with date and time
 ## Use examples:
 
 ```html
-<lesli-calendar v-model="mydate" mode="dateTime">
-</lesli-calendar>
+<text-editor v-model="mytext">
+</text-editor>
 ```
 
+<text-editor v-model="mytext" mode="full">
+</text-editor>
 
-```raw
-<lesli-calendar v-model="mydate" mode="dateTime">
-</lesli-calendar>
-```
+<hr />
+
+<text-editor v-model="mytext">
+</text-editor>
+
+<hr />
+
+<text-editor v-model="mytext" mode="small">
+</text-editor>
+
+<hr />
+
+<text-editor v-model="mytext" mode="empty">
+</text-editor>

@@ -41,8 +41,6 @@ export function useLesliMsg() {
             duration = durationDefault
         }
 
-        console.log(duration)
-
         // create a new raw html div in the root of the html document
         var toastContainer = document.getElementById("lesli-msg-container")
 

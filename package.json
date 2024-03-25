@@ -34,9 +34,10 @@
             "import": "./dist/composables.mjs",
             "require": "./dist/composables.cjs"
         },
-        "./components": "./dist/components.mjs",
         "./elements": "./dist/elements.mjs",
-        "./dist/elements.css": "./dist/elements.css"
+        "./components": "./dist/components.mjs",
+        "./elements.css": "./dist/elements.css",
+        "./components.css": "./dist/components.css"
     },
     "dependencies": {
         "trix": "2.0.10",
@@ -44,7 +45,9 @@
         "dayjs": "1.11.10",
         "mermaid": "10.8.0",
         "remixicon": "4.1.0",
-        "apexcharts": "3.46.0"
+        "v-calendar": "3.1.2",
+        "apexcharts": "3.46.0",
+        "@popperjs/core": "2.11.8"
     },
     "devDependencies": {
 

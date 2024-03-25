@@ -57,7 +57,7 @@ class LesliDate {
     #datetime = {}
     #format = ""
     
-    constructor(datetime = dayjs().utc().format(), format = "%Y-%m-%d %H:%M:%S") {
+    constructor(datetime = dayjs().utc().format(), format) {
 
         /*
         # NOTE: Do not modify settings here,
@@ -76,7 +76,7 @@ class LesliDate {
                 date: "%d.%m.%Y",
                 time: "%H:%M",                          // 24 hours datetime format (default)
                 dateTime: "%d.%m.%Y %H:%M",             // 24 hours datetime format (default)
-                dateWords: "%A / %B %d, %Y",
+                dateWords: "%A, %B %d",
                 dateTimeWords: "%A / %B %d, %Y, %H:%M"   // 24 hours datetime in words format (default)
             }
         }
@@ -94,6 +94,10 @@ class LesliDate {
         return this.toString()
     }
 
+    time() {
+        this.#setFormat("time")
+        return this.toString()
+    }
 
     dateTime() {
         this.#setFormat("dateTime")

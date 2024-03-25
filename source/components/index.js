@@ -29,17 +29,17 @@ Building a better future, one line of code at a time.
 // · 
 */
 
-import ChartLine from "./charts/line/line.vue"
-// import lesliChartBar from "./charts/bar/bar.vue"
+import lesliChartLine from "./charts/line/line.vue"
+import lesliChartBar from "./charts/bar/bar.vue"
 
 // import editorRichTextViewer from "./editors/richtext-viewer.vue"
-import editorRichText from "./editors/richtext.vue"
+import LesliTextEditor from "./editors/text-editor/TextEditor.vue"
 // import editorKeypad from "./editors/keypad.vue"
 
 export { 
     // editorRichTextViewer, 
-    editorRichText, 
+    LesliTextEditor, 
     // editorKeypad,
-    ChartLine,
-    // lesliChartBar
+    lesliChartLine,
+    lesliChartBar
 }

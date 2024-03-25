@@ -39,7 +39,8 @@ import { ref, reactive, onMounted, watch, getCurrentInstance } from "vue"
 
 // · import & define local components
 import Trix from "trix"
-import "trix/dist/trix.css"
+//import "trix/dist/trix.css"
+import "./TextEditor.scss";
 
 
 // · defining emits
@@ -47,7 +48,7 @@ const emit = defineEmits(['update:modelValue', 'change', 'save']);
 
 
 // · randome id for html node
-const editorId = `component-richtext-${Math.floor(Math.random() * 10000)}`
+const editorId = `lesli-component-text-editor-${Math.floor(Math.random() * 10000)}`
 const editorNode = ref(null)        // editor node container
 const editorContent = ref(null)     // input container
 
@@ -219,12 +220,15 @@ onMounted(() => {
     setTimeout(()=>{
 
         // · append the container with the buttons to the main toolbar element
-        document.querySelector(".trix-button-row").appendChild(containerElement);
+        document
+        .querySelector("." + editorId)      // Get main editor
+        .querySelector(".trix-button-row")  // Get main toolbar
+        .appendChild(containerElement);     // Append custom button
     }, 800)
 })
 </script>
 <template>
-    <div :class="['component-editor-richtext', props.mode]">
+    <div :class="['lesli-component-text-editor',  editorId, props.mode]">
         <input ref="editorContent" :id="editorId" type="hidden" name="content">
         <trix-editor 
             ref="editorNode" 

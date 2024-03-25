@@ -32,47 +32,8 @@ Building a better future, one line of code at a time.
 
 
 // · 
-.lesli-msg {
-    position: fixed;
-    z-index: 99999;
-    width: 100%;
-    top: 40px;
-
-    .lesli-msg-content {
-        text-align: center;
-        margin-bottom: 2px;
-        //animation: lesli-msg-move-in-top cubic-bezier(.22, .58, .12, .98) .4s;
-         &.hide {
-             animation: lesli-msg-fade-out cubic-bezier(.22, .58, .12, .98) .2s forwards;
-         }
-
-        .notification {
-            display: inline-block;
-            padding: 1.25rem 2.5rem;
-            font-weight: 400;
-        }
-    }
-}
-
-// · animations
-@keyframes lesli-msg-move-in-top {
-    from {
-        opacity: 0;
-        transform: translate(0, 5em);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-}
-
-@keyframes lesli-msg-fade-out {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
+.lesli-element-calendar {
+    .icon {
+        
     }
 }
