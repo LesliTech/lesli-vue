@@ -1,3 +1,7 @@
+<script setup>
+    import LesliAvatar from "./Avatar.vue"
+</script>
+
 # Avatar
 
 The component lesli avatar is registered globally and is meant to be used in all the vue apps as lesli-avatar
@@ -26,31 +30,84 @@ This prop is used to define the size of the avatar. It can be set to small, medi
 - **required**: false
 - **default**: small
 
-## Events
-No events are defined for this component.
 
-## Slots
-No slots are defined for this component.
-
-## Example 1
+## Text as avatar
 
 The letter is requerided to be used in the component.
 
 ```html
-<lesli-avatar 
-    letter="A"
-    url-image="https://www.example.com/image.jpg" 
-    size="small"
-/>
+<script setup>
+    import LesliAvatar from "./Avatar.vue"
+</script>
+<template>
+    <lesli-avatar name="Lesli">
+    </lesli-avatar>
+
+    <lesli-avatar name="Lesli Tech">
+    </lesli-avatar>
+
+    <lesli-avatar name="Lesli Tech" size="small">
+    </lesli-avatar>
+
+    <lesli-avatar name="Lesli Tech" size="medium">
+    </lesli-avatar>
+
+    <lesli-avatar name="Lesli Tech" size="large">
+    </lesli-avatar>
+</template>
 ```
 
-## Example 2
+Results:
+
+<lesli-avatar name="Lesli">
+</lesli-avatar>
+
+<br >
+
+<lesli-avatar name="Lesli Tech">
+</lesli-avatar>
+
+
+## Image as avatar
 
 If url image is not defined, the component will use the letter as the image.
 
 ```html
-<lesli-avatar 
-    name="John Doe" 
-    size="medium" 
-/>
+<lesli-avatar image="https://picsum.photos/128/128">
+</lesli-avatar>
 ```
+
+<lesli-avatar image="https://picsum.photos/128/128">
+</lesli-avatar>
+
+
+## Sizes
+
+
+```html
+<script setup>
+    import LesliAvatar from "./Avatar.vue"
+</script>
+<template>
+    <lesli-avatar name="Lesli Tech" size="small">
+    </lesli-avatar>
+
+    <lesli-avatar name="Lesli Tech" size="medium">
+    </lesli-avatar>
+
+    <lesli-avatar name="Lesli Tech" size="large">
+    </lesli-avatar>
+</template>
+```
+
+Results:
+
+<lesli-avatar name="Lesli Tech" size="small">
+</lesli-avatar>
+<br>
+<lesli-avatar name="Lesli Tech" size="medium">
+</lesli-avatar>
+<br>
+<lesli-avatar name="Lesli Tech" size="large">
+</lesli-avatar>
+

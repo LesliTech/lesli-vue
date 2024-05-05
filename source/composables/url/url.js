@@ -337,42 +337,42 @@ export function useLesliUrl() {
             return (new LesliUrl()).engine("admin", path, params)
         },
         
-        // · Build a url for CloudAudit engine
+        // · Build a url for LesliAudit engine
         audit(path, params={}) {
             return (new LesliUrl()).engine("audit", path, params)
         },
         
-        // · Build a url for CloudBabel engine
+        // · Build a url for LesliBabel engine
         babel(path, params={}) {
             return (new LesliUrl()).engine("babel", path, params)
         },
         
-        // · Build a url for CloudBell engine
+        // · Build a url for LesliBell engine
         bell(path, params={}) {
             return (new LesliUrl()).engine("bell", path, params)
         },
         
-        // · Build a url for CloudHelp engine
+        // · Build a url for LesliHelp engine
         support(path, params={}) {
             return (new LesliUrl()).engine("support", path, params)
         },
 
-        // · Build a url for CloudMailer engine
+        // · Build a url for LesliMailer engine
         mailer(path, params={}) {
             return (new LesliUrl()).engine("mailer", path, params)
         },
         
-        // · Build a url for CloudTalk engine
+        // · Build a url for LesliTalk engine
         talk(path, params={}) {
             return (new LesliUrl()).engine("talk", path, params)
         },
         
-        // · Build a url for CloudFocus engine
+        // · Build a url for LesliFocus engine
         focus(path, params={}) {
             return (new LesliUrl()).engine("focus", path, params)
         },
 
-        // · Build a url for CloudTime engine
+        // · Build a url for LesliTime engine
         time(path, params={}) {
             return (new LesliUrl()).engine("time", path, params)
         },
@@ -382,34 +382,39 @@ export function useLesliUrl() {
             return (new LesliUrl()).engine("calendar", path, params)
         },
         
-        // · Build a url for CloudSocial engine
+        // · Build a url for LesliSocial engine
         social(path, params={}) {
             return (new LesliUrl()).engine("social", path, params)
         },
         
-        // · Build a url for CloudWord engine
+        // · Build a url for LesliWord engine
         word(path, params={}) {
             return (new LesliUrl()).engine("word", path, params)
         },
         
-        // · Build a url for CloudTeam engine
+        // · Build a url for LesliTeam engine
         team(path, params={}) {
             return (new LesliUrl()).engine("team", path, params)
         },
         
-        // · Build a url for CloudScraper engine
+        // · Build a url for LesliScraper engine
         scraper(path, params={}) {
             return (new LesliUrl()).engine("scraper", path, params)
         },
-        
-        // · Build a url for CloudShared engine
+
+        // · Build a url for LesliShared engine
+        shield(path, params={}) {
+            return (new LesliUrl()).engine("shield", path, params)
+        },
+
+        // · Build a url for LesliShared engine
         shared(path, params={}) {
             return (new LesliUrl()).engine("shared", path, params)
         },
 
-        // · Build a url for CloudGuard engine
-        guard(path, params={}) {
-            return (new LesliUrl()).engine("guard", path, params)
+        // · Build a url for LesliSecurity engine
+        security(path, params={}) {
+            return (new LesliUrl()).engine("security", path, params)
         },
 
         // · 
@@ -417,9 +422,14 @@ export function useLesliUrl() {
             return (new LesliUrl()).engine("letter", path, params)
         },
 
-        // · Build a url for CloudAuthority engine
+        // · Build a url for LesliAuthority engine
         authority(path, params={}) {
             return (new LesliUrl()).engine("authority", path, params)
+        },
+
+        // · Build a url for LesliAuthority engine
+        dashboard(path, params={}) {
+            return (new LesliUrl()).engine("dashboard", path, params)
         }
     }
 }

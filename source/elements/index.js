@@ -32,7 +32,7 @@ Building a better future, one line of code at a time.
 
 // // · 
 // // import lesliElementAutocomplete from "./autocomplete/Autocomplete.vue"
-// // import lesliElementAvatar from "./avatar/Avatar.vue"
+import LesliAvatar from "./avatar/Avatar.vue"
 import LesliButton from "./button/Button.vue"
 import LesliCalendar from "./calendar/Calendar.vue"
 import LesliCard from "./card/Card.vue"
@@ -69,7 +69,7 @@ import LesliToolbar from "./toolbar/Toolbar.vue"
 // · 
 export {
     // lesliElementAutocomplete, 
-    // lesliElementAvatar, 
+    LesliAvatar, 
     LesliButton,
     LesliCalendar, 
     LesliCard,

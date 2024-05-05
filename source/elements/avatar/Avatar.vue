@@ -29,77 +29,101 @@ Building a better future, one line of code at a time.
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
 
 
 // · import vue tools
-import { computed, ref } from "vue"
+import { ref, watch, onMounted } from "vue"
+import "./Avatar.scss";
 
+// · 
 const props = defineProps({
-    // · url image to render as avatar
-    urlImage: {
+
+    image: {
         type: String,
         default: null
     },
-    // · letter to render as avatar
+
     name: {
         type: String,
-        default: null,
+        default: "",
     },
-    // · letter to render as avatar
-    letter: {
-        type: String,
-        default: null,
-    },
-    // · size of the avatar and it could be small, medium or large
+
     size: {
         type: String,
-        default: "small",
+        required: true,
+        default: "medium",
     },
 })
 
-// · boolean to show avatar as image or letter
-const showImage = computed(() => props.urlImage !== null)
 
 // · calculate the font size of the letter based on the size of the avatar
-const fontSize = ref(null)
+const fontSize = ref("")
+
 
 // · size of the avatar its injected in the style attribute
-const avatarSize = ref(null)
+const avatarSize = ref("")
 
 
-// validate the size of the avatar
-if (props.size === "small") {
+const letter = ref("?")
 
-    fontSize.value = "is-size-5"
-    avatarSize.value = "height: 60px; width: 60px;"
+function getLetter() {
 
-} else if (props.size === "medium") {
+    if (!props.name || props.name == "") {
+        return letter.value = ""
+    }
 
-    fontSize.value = "is-size-3"
-    avatarSize.value = "height: 120px; width: 120px;"
-
-} else if (props.size === "large") {
-
-    fontSize.value = "is-size-1"
-    avatarSize.value = "height: 180px; width: 180px;"
-
+    // Split the sentence into words
+    const words = props.name.trim().split(/\s+/);
+    
+    // Extract the first character of the first two words and convert to uppercase
+    const firstChars = words.slice(0, 2).map(word => word.charAt(0).toUpperCase());
+    
+    // Join the extracted characters and return
+    letter.value = firstChars.join('');
 }
 
 
-// · Letter to render as avatar
-const letter = computed(() => {
-    if (props.name) return props.name.charAt(0).toUpperCase()
-    else if (props.letter) return props.letter.toUpperCase()
-    else return '?'
+// calculate the size of the avatar
+function calculateSize() {
+
+    if (props.size === "small") {
+        fontSize.value = "is-size-5"
+        avatarSize.value = "height: 60px; width: 60px;"
+        return 
+    } 
+    
+    if (props.size === "medium") {
+        fontSize.value = "is-size-3"
+        avatarSize.value = "height: 120px; width: 120px;"
+        return 
+    } 
+    
+    if (props.size === "large") {
+        fontSize.value = "is-size-1"
+        avatarSize.value = "height: 180px; width: 180px;"
+    }
+}
+
+
+onMounted(() => {
+    calculateSize()
+
+    if (!props.image) {
+        getLetter()
+    }
+})
+
+watch(() => props.name, () => {
+    if (!props.image) {
+        getLetter()
+    }
 })
 
 </script>
-
 <template>
-    <figure class="lesli-avatar" :style="avatarSize">
-        <img v-if="showImage" :src="urlImage">
+    <figure class="lesli-element-avatar has-background-grey-lighter" :style="avatarSize">
+        <img v-if="image" :src="image">
         <span v-else class="has-text-weight-bold" :class="fontSize">{{ letter }}</span>
     </figure>
 </template>
