@@ -62,7 +62,8 @@ const props = defineProps({
     },
     labels: {
         type: Array,
-        required: true
+        required: false,
+        default: () => []
     },
     options: {
         type: Object,

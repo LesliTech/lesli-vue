@@ -18,18 +18,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Your Smart Business Assistant. 
+Lesli · Ruby on Rails SaaS Development Framework.
 
-Made with ♥ by https://www.lesli.tech
+Made with ♥ by LesliTech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://lesli.tech
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
-// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
+// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
 
 
@@ -37,6 +36,7 @@ Building a better future, one line of code at a time.
 // · import vue tools
 import { ref, useSlots } from "vue"
 import "./Table.scss";
+
 
 // · 
 const slots = useSlots()
@@ -58,10 +58,14 @@ const props = defineProps({
         default: "is-striped"
     },
     pagination: {
-        type: [Object, Boolean],
+        type: Object,
         required: false
     },
     loading: {
+        type: Boolean,
+        default: false
+    },
+    headless: {
         type: Boolean,
         default: false
     },
@@ -77,25 +81,16 @@ const props = defineProps({
     link: {
         type: Function,
         required: false
-    },
-    href: {
-        type: Function,
-        required: false
-    },
-    headless: {
-        type: Boolean,
-        default: false
     }
 })
 
 
-// · define variables
-const objectRecords = ref([])
-const arrayRecords = ref([])
-
+// · 
 const currentSort = ref(null)
 const currentSortDir = ref('asc')
 
+
+// · 
 const dropdownActive = ref([])
 
 
@@ -253,15 +248,6 @@ function openDetails(record) {
 
 
                         <!--
-                            Print a standard html anchor link if prop is provided and
-                            there is not a slot for this specific column
-                        -->
-                        <a v-if="props.href && !slots[column.field]" :href="props.href(record)">
-                            {{ record[column.field] }}
-                        </a>
-
-
-                        <!--
                             Use a slot to render content, so it is possible to 
                             use html elements to render custom componentes for 
                             every column of the table 
@@ -272,7 +258,7 @@ function openDetails(record) {
                             print the default slot if href or link prop was not provided :)
                         -->
                         <slot 
-                            v-if="slots[column.field] || (!props.href && !props.link)"
+                            v-if="slots[column.field] || !props.link"
                             :name="column.field"
                             :column="column"
                             :record="record"

@@ -1,6 +1,6 @@
 {
     "name": "lesli-vue",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "GPLv3",
     "homepage": "https://www.lesli.dev/",
     "description": "Vue elements, components, composables and tools for The Lesli Framework.",
@@ -46,6 +46,7 @@
         "mermaid": "10.8.0",
         "remixicon": "4.1.0",
         "v-calendar": "3.1.2",
+        "charts.css": "1.1.0",
         "apexcharts": "3.46.0",
         "@popperjs/core": "2.11.8"
     },

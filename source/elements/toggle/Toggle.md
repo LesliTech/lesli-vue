@@ -1,3 +1,9 @@
+<script setup>
+    import { ref } from "vue"
+    import LesliToggle from "./Toggle.vue"
+    const isChecked = ref(false);
+</script>
+
 # Toggle
 
 The component lesli toggle is registered globally and is meant to be used in all the vue apps as lesli-toggle. This component is used to create a toggle, and needs to be used like a input type checkbox.
@@ -32,14 +38,20 @@ No events are defined for this component.
 ## Slots
 No slots are defined for this component.
 
-## Example 1
+## Example 
 
 v-model is required because it is the only way to control the state of the toggle.
 
-```javascript
-const isChecked = ref(false);
+```html
+<script setup>
+    import LesliToggle from "./Avatar.vue"
+    const isChecked = ref(false);
+</script>
+<template>
+    <lesli-toggle v-model="isChecked"/>
+</template>
 ```
 
-```html
+**Results:**
+
 <lesli-toggle v-model="isChecked"/>
-```

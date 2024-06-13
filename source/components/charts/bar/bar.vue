@@ -45,6 +45,10 @@ import componentChartGeneral from "../general.vue"
 // · defining props
 const props = defineProps({
     title: String,
+    stacked: {
+        type: Boolean,
+        default: false
+    },
     series: {
         type: Array,
         required: true
@@ -61,6 +65,7 @@ const props = defineProps({
 const barOptions = {
     chart: {
         height: '350px',
+        stacked: props.stacked
     },
     plotOptions: {
         bar: {

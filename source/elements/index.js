@@ -53,7 +53,7 @@ import LesliHeader from "./header/Header.vue"
 import LesliLink from "./link/Link.vue"
 import LesliLoading from "./loading/Loading.vue"
 // // import lesliElementMap from "./map/Map.vue"
-// // import lesliElementNavbar from "./navbar/Navbar.vue"
+import LesliNavbar from "./navbar/Navbar.vue"
 // // import lesliElementNavigationList from "./navigation/NavigationList.vue"
 import LesliPagination from "./pagination/Pagination.vue"
 import LesliPanel from "./panel/Panel.vue"
@@ -87,7 +87,7 @@ export {
     LesliLink, 
     LesliLoading, 
     // lesliElementMap, 
-    // lesliElementNavbar, 
+    LesliNavbar,
     // lesliElementNavigationList, 
     LesliPagination, 
     LesliPanel, 

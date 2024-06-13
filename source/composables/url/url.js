@@ -63,6 +63,10 @@ class LesliUrl {
     
     // build a url for a specific engine
     engine(engine, path, params) {
+
+        if (engine.startsWith('/')) {
+            engine = engine.slice(1);
+        }
         
         // manually add a slash due we are not using native JS url builders
         engine = engine.concat("/")
@@ -300,7 +304,7 @@ class LesliUrl {
 
 
 
-export function useLesliUrl() {
+export function useLesliUrl(lesli=null) {
     
     const root = "/"
     
@@ -379,7 +383,8 @@ export function useLesliUrl() {
         
         // · Build a url for LesliCalendar engine
         calendar(path, params={}) {
-            return (new LesliUrl()).engine("calendar", path, params)
+
+            return (new LesliUrl()).engine(lesli.engine_paths["LesliCalendar"], path, params)
         },
         
         // · Build a url for LesliSocial engine

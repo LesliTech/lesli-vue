@@ -1,5 +1,5 @@
 <script setup>
-    import LesliChartLine from "./line.vue"
+    import LesliChartLine from "./Line.vue"
     import { defineAsyncComponent } from "vue"
 </script>
 

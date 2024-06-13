@@ -29,8 +29,8 @@ Building a better future, one line of code at a time.
 // · 
 */
 
-import lesliChartLine from "./charts/line/line.vue"
-import lesliChartBar from "./charts/bar/bar.vue"
+import lesliChartLine from "./charts/line/Line.vue"
+import lesliChartBar from "./charts/bar/Bar.vue"
 
 // import editorRichTextViewer from "./editors/richtext-viewer.vue"
 import LesliTextEditor from "./editors/text-editor/TextEditor.vue"

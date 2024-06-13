@@ -43,8 +43,14 @@ class LesliDebug {
         console.error("%c"+this.#buildMessage(message, modulo, "error"), this.#stylesForBrowser("fatal"))
     }
 
+    // · 
     hr(size=10) {
         console.log('-·-     '.repeat(size))
+    }
+
+    // · 
+    br(size=1) {
+        console.log('')
     }
 
     message(title, messages, more_information=null) {

@@ -18,97 +18,53 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Your Smart Business Assistant. 
+Lesli · Ruby on Rails SaaS Development Framework.
 
-Made with ♥ by https://www.lesli.tech
+Made with ♥ by LesliTech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://lesli.tech
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
-// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
+// · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
 
 
 // · import vue tools
-import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
-
-// · defining props
-const props = defineProps({
-    // · left side of the navbar links
-    startLinks: {
-        type: Array,
-        required: true
-    },
-    // · right side of the navbar links
-    endLinks: {
-        type: Array,
-        required: false
-    },
-    // · object with the url image and the alt text
-    brand: {
-        type: Object,
-        required: false
-    },
-    
-
-})
-
-const router = useRouter()
-
-// · id for the navbar burger menu
-const uniqueId = Math.random().toString(36).slice(3, 9)
-// · state of the navbar burger menu
-const isNavbarMenuOpen = ref(false)
+import { ref } from "vue";
+import "./Navbar.scss";
 
 
-// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-const onNavbarBurgerClick = () => {
-    isNavbarMenuOpen.value = !isNavbarMenuOpen.value
+// · 
+const isActive = ref(false)
+
+
+// · 
+function toggle() {
+    isActive.value = !isActive.value
 }
-
-// · is active class for navbar menu and navbar burger
-const isActive = computed(() => isNavbarMenuOpen.value ? 'is-active' : '')
-
-const onClickLink = (link) => {
-    if (link?.reload) window.location.href = link.url
-    else router.push(link.url)
-}
-
-const current_path = computed(() => router.currentRoute.value.path)
-
 </script>
-
 <template>
     <nav class="lesli-navbar navbar" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <template v-if="brand">
-                    <a @click="onClickLink(brand)" class="lesli-navbar-brand">
-                        <img :src="brand.image" :alt="brand.name">
-                    </a>
-                    
-                </template>
-                <a @click="onNavbarBurgerClick" :class="['navbar-burger', isActive ]" :data-target="uniqueId" role="button" aria-label="menu" aria-expanded="false">
+                <slot name="brand"></slot>
+                <button @click="toggle" 
+                    role="button" class="navbar-burger"
+                    aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
-                </a>
+                </button>
             </div>
-            <div :class="['navbar-menu', isActive]" :id="uniqueId">
-                <div v-if="startLinks" class="navbar-start">
-                    <a v-for="(link, i) in startLinks" :key="link.name" @click="onClickLink(link)" :class="['lesli-navbar-link', current_path == link.url ? 'lesli-navbar-current-path' : '']">
-                        {{ link.name }}
-                    </a>
+            <div :class="['navbar-menu', {'is-active': isActive }]">
+                <div class="navbar-start">
+                    <slot name="start"></slot>
                 </div>
-                <div v-if="endLinks" class="navbar-end">
-                    <a v-for="(link, i) in endLinks" :key="link.name" @click="onClickLink(link)" :class="['lesli-navbar-link', current_path == link.url ? 'lesli-navbar-current-path' : '']">
-                        {{ link.name }}
-                    </a>
+                <div class="navbar-end">
+                    <slot name="end"></slot>
                 </div>
             </div>
         </div>
