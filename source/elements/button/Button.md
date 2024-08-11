@@ -146,7 +146,7 @@ This component accepts one single slot for the button text.
     </lesli-button>
 ```
 
-<div class="buttons">
+<div class="buttons mb-3">
     <lesli-button loading>
         loading
     </lesli-button>

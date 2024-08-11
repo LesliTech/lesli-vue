@@ -71,3 +71,34 @@ prop that allows to disable the select component
         value: 'option_two'
     }]">
 </lesli-select>
+
+
+<div class="control has-icons-left">
+    <div class="select">
+        <select>
+            <option selected>Country</option>
+            <option>Select dropdown</option>
+            <option>With options</option>
+        </select>
+    </div>
+    <span class="icon is-small is-left">
+        <span class="material-icons">
+            public
+        </span>
+    </span>
+</div>
+
+<div class="control has-icons-left">
+  <div class="select is-small">
+    <select>
+      <option selected>Country</option>
+      <option>Select dropdown</option>
+      <option>With options</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <span class="material-icons">
+            public
+        </span>
+  </span>
+</div>

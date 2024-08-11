@@ -33,7 +33,7 @@ Building a better future, one line of code at a time.
 // · 
 export function useLesliMsg() {
 
-    const durationDefault = 2800
+    const durationDefault = 10000
 
     function msg(text, type="success", duration=0) {
 
@@ -44,13 +44,16 @@ export function useLesliMsg() {
         // create a new raw html div in the root of the html document
         var toastContainer = document.getElementById("lesli-msg-container")
 
+        // check if the toast container exists
         if (!toastContainer) {
+
+            // if not exist, we create the new html node
             toastContainer = document.createElement('div')
             toastContainer.id = "lesli-msg-container"
             toastContainer.className = 'lesli-msg'
         }
-        //
 
+        //
         var toastContent = document.createElement('div')
         toastContent.className = 'lesli-msg-content'
         var toastEl = document.createElement('div')
@@ -61,9 +64,13 @@ export function useLesliMsg() {
         toastEl.classList.add("notification", `is-${type}`)
 
         toastContent.appendChild(toastEl);
-        toastContainer.appendChild(toastContent)
 
-        // show the new message component
+        // Inject the new toast message into the main 
+        // visible container at the html body
+        //toastContainer.appendChild(toastContent)
+        toastContainer.prepend(toastContent)
+
+        // Inject the main toast container into the body
         document.body.appendChild(toastContainer)
     
         // start counting to hide the message

@@ -35,7 +35,7 @@ Building a better future, one line of code at a time.
 @import "../../scss/component.scss";
 
 
-$primary: lesli-css-color(palette, primary);
+$primary: lesli-css-color(lesli, primary);
 
 // · 
 .lesli-toggle {

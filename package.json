@@ -1,6 +1,6 @@
 {
     "name": "lesli-vue",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "license": "GPLv3",
     "homepage": "https://www.lesli.dev/",
     "description": "Vue elements, components, composables and tools for The Lesli Framework.",
@@ -43,17 +43,13 @@
         "trix": "2.0.10",
         "axios": "1.6.7",
         "dayjs": "1.11.10",
-        "mermaid": "10.8.0",
         "remixicon": "4.1.0",
         "v-calendar": "3.1.2",
-        "charts.css": "1.1.0",
-        "apexcharts": "3.46.0",
-        "@popperjs/core": "2.11.8"
+        "apexcharts": "3.46.0"
     },
     "devDependencies": {
 
-        "sass": "1.71.0",
-        "lesli-css": "1.6.2",
+        "lesli-css": "../lesli-css/lesli-css-2.1.0.tgz",
 
         "rollup": "4.12.0",
         "rollup-plugin-vue": "6.0.0",
