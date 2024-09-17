@@ -4,35 +4,19 @@
 
 # Avatar
 
-The component lesli avatar is registered globally and is meant to be used in all the vue apps as lesli-avatar
-
-## Props
-
-**:letter**
-This prop is used to define the letter that will be used to show in the avatar. It is required because it is the only way to show a letter by default if the user doesn't provide a url.
-- **type**: String
-- **required**: false
-
-**:name**
-This prop is used to get the first letter of the name that was provided in the props.
-- **type**: String
-- **required**: false
-
-**:url-image**
-This prop is used to define the url of the image that will be used to show in the avatar.
-- **type**: String
-- **required**: false
-- **default**: null
-
-**:size**
-This prop is used to define the size of the avatar. It can be set to small, medium or large.
-- **type**: Number
-- **required**: false
-- **default**: small
+The Avatar component offers a customizable way to display user avatars. It supports showing a single character, a name, or an image, with adjustable sizes (small, medium, large) to fit different design needs. Ideal for profiles and UI elements, it enhances visual consistency and user experience.
 
 
-## Text as avatar
+### Props
 
+| Name | Type | Description  |
+|:---  |---   |---           |
+| :name   | string | Word that represents name of a user |
+| :src    | string | Url for an image|
+| :size   | string | Size of the avatar small/medium/large |
+
+
+### Text as avatar
 The letter is requerided to be used in the component.
 
 ```html
@@ -45,15 +29,6 @@ The letter is requerided to be used in the component.
 
     <lesli-avatar name="Lesli Tech">
     </lesli-avatar>
-
-    <lesli-avatar name="Lesli Tech" size="small">
-    </lesli-avatar>
-
-    <lesli-avatar name="Lesli Tech" size="medium">
-    </lesli-avatar>
-
-    <lesli-avatar name="Lesli Tech" size="large">
-    </lesli-avatar>
 </template>
 ```
 
@@ -62,13 +37,13 @@ Results:
 <lesli-avatar name="Lesli">
 </lesli-avatar>
 
-<br >
+<br />
 
 <lesli-avatar name="Lesli Tech">
 </lesli-avatar>
 
 
-## Image as avatar
+### Image as avatar
 
 If url image is not defined, the component will use the letter as the image.
 
@@ -81,7 +56,7 @@ If url image is not defined, the component will use the letter as the image.
 </lesli-avatar>
 
 
-## Sizes
+### Sizes
 
 
 ```html
@@ -97,6 +72,15 @@ If url image is not defined, the component will use the letter as the image.
 
     <lesli-avatar name="Lesli Tech" size="large">
     </lesli-avatar>
+
+    <lesli-avatar image="https://picsum.photos/128/128" size="large">
+    </lesli-avatar>
+
+    <lesli-avatar image="https://picsum.photos/128/128" size="medium">
+    </lesli-avatar>
+
+    <lesli-avatar image="https://picsum.photos/128/128" size="small">
+    </lesli-avatar>
 </template>
 ```
 
@@ -104,10 +88,28 @@ Results:
 
 <lesli-avatar name="Lesli Tech" size="small">
 </lesli-avatar>
+
 <br>
+
 <lesli-avatar name="Lesli Tech" size="medium">
 </lesli-avatar>
+
 <br>
+
 <lesli-avatar name="Lesli Tech" size="large">
 </lesli-avatar>
 
+<br>
+
+<lesli-avatar image="https://picsum.photos/128/128" size="large">
+</lesli-avatar>
+
+<br>
+
+<lesli-avatar image="https://picsum.photos/128/128" size="medium">
+</lesli-avatar>
+
+<br>
+
+<lesli-avatar image="https://picsum.photos/128/128" size="small">
+</lesli-avatar>

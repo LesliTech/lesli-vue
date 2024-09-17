@@ -57,6 +57,7 @@ function toggle() {
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </button>
             </div>
             <div :class="['navbar-menu', {'is-active': isActive }]">

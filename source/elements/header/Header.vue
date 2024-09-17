@@ -65,10 +65,10 @@ function goBack() {
                     arrow_back
                 </span>
             </button>
-            <h1 class="subtitle is-3" v-if="title">{{ title }}</h1>
+            <h1 class="subtitle is-size-3" v-if="title">{{ title }}</h1>
         </div>
         <div class="lesli-element-header-items is-flex is-flex-grow-1 is-justify-content-end">
-                <slot></slot>
+            <slot></slot>
         </div>
     </section>
 </template>

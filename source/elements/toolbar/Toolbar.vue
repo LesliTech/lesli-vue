@@ -82,8 +82,8 @@ function clearSearch(){
 }
 </script>
 <template>
-    <div class="component-toolbar">
-        <div class="field is-grouped lesli-toolbar">
+    <div class="lesli-toolbar mb-5">
+        <div class="field is-grouped">
             <div class="control is-expanded has-icons-right has-icons-left">
                 <input 
                     type="text" 
@@ -91,8 +91,9 @@ function clearSearch(){
                     class="input is-shadowless"
                     v-model="text" 
                     :placeholder="searchPlaceholder" 
-                    @input="search()">
-                <span class="icon is-small is-left">
+                    @input="search()"
+                />
+                <span class="icon is-small is-left has-text-grey-light">
                     <span class="material-icons">
                         search
                     </span>
