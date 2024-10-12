@@ -32,7 +32,7 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { computed } from "vue"
+import { computed, ref } from "vue"
 
 
 // · defining emits
@@ -43,7 +43,6 @@ const emit = defineEmits(['paginate']);
 // · Pagination example
 // { "page": 1, "pages": 15, "total": 225, "results": 225 } 
 const props = defineProps({
-    
     pagination: {
         type: Object,
         required: true
@@ -53,52 +52,53 @@ const props = defineProps({
         default: 'complete',
         required: false,
         validator: (val) => ['complete', 'simple'].includes(val),
-    },
+    }
 })
+
+const paginationPage = ref(0)
+const paginationPages = ref(0)
+
+
+paginationPage.value = props.pagination.page
+paginationPages.value = props.pagination.pages
 
 
 // · 
 function paginateNext() {
-    props.pagination.page++
-    emit('paginate', props.pagination.page)
+    paginationPage.value++
+    emit('paginate', paginationPage.value)
 }
 
 
 // · 
 function paginatePrev() {
-    props.pagination.page--
-    emit('paginate', props.pagination.page)
+    paginationPage.value--
+    emit('paginate', paginationPage.value)
 }
 
 
 // · 
 function paginateLast() {
-    props.pagination.page = props.pagination.pages
-    emit('paginate', props.pagination.page)
+    paginationPage.value = paginationPages.value
+    emit('paginate', paginationPage.value)
 }
 
 
 // · 
 function paginateTo(page) {
-    props.pagination.page = page
-    emit('paginate', props.pagination.page)
+    paginationPage.value = page
+    emit('paginate', paginationPage.value)
 }
-
-
-// · 
-const disableNext = computed(() => props.pagination.page >= props.pagination.pages)
-const disablePrev = computed(() => props.pagination.page <= 1)
-
 </script>
 <template>
     <nav class="pagination mb-5" role="navigation" aria-label="pagination">
         <ul class="pagination-list" v-if="props.mode==='complete'">
-            <template v-if="props.pagination.pages > 1">
+            <template v-if="paginationPages > 1">
                 <template v-for="page in 5"> 
-                    <li v-if="page < props.pagination.pages">
+                    <li v-if="page < paginationPages">
                         <button 
                             class="button pagination-link" 
-                            :class="{'is-current': props.pagination.page == page}"
+                            :class="{'is-current': paginationPage == page}"
                             @click.stop="paginateTo(page)">
                             {{ page }}
                         </button>
@@ -110,10 +110,10 @@ const disablePrev = computed(() => props.pagination.page <= 1)
                 <li>
                     <button 
                         class="button pagination-link" 
-                        :class="{'is-current': props.pagination.page == props.pagination.pages }"
-                        :disabled="disableNext"
+                        :class="{'is-current': paginationPage == paginationPages }"
+                        :disabled="(paginationPage >= paginationPages)"
                         @click.stop="paginateLast()">
-                        {{ props.pagination.pages }}
+                        {{ paginationPages }}
                     </button>
                 </li>
             </template>
@@ -122,13 +122,13 @@ const disablePrev = computed(() => props.pagination.page <= 1)
         <button 
             class="button is-primary is-outlined pagination-previous" 
             @click.stop="paginatePrev()"
-            :disabled="disablePrev">
+            :disabled="(paginationPage <= 1)">
             Previous 
         </button>
         <button 
             class="button is-primary is-outlined pagination-previous" 
             @click.stop="paginateNext()"
-            :disabled="disableNext">
+            :disabled="(paginationPage >= paginationPages)">
             Next page 
         </button>
     </nav>

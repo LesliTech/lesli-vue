@@ -41,6 +41,7 @@ import LesliColumn from "./columns/Column.vue"
 import LesliColumns from "./columns/Columns.vue"
 
 import LesliForm from "./form/Form.vue"
+import LesliInput from "./input/Input.vue"
 import LesliControl from "./control/Control.vue"
 // // import lesliElementDropdown from "./dropdown/Dropdown.vue"
 import LesliSelect from "./select/Select.vue"
@@ -76,10 +77,12 @@ export {
     // lesliElementCollapse, 
     LesliColumn,
     LesliColumns,
-    LesliControl, 
+    
     // lesliElementDropdown, 
     LesliEmpty, 
     LesliForm, 
+    LesliInput,
+    LesliControl, 
     LesliHeader, 
     // lesliElementIcon, 
     // lesliElementInput, 

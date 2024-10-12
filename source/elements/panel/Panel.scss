@@ -51,7 +51,6 @@ section.lesli-panel {
     }
 
     div.lesli-panel-content {
-        @include lesli-css-scrollbar(hide);
         background-color: white;
         position: fixed;
         z-index: 40;
@@ -61,10 +60,11 @@ section.lesli-panel {
         height: 100%;
         overflow-y: scroll;
 
+        @include lesli-css-scrollbar(hide);
+
         .lesli-panel-header {
             padding: 1rem 1rem .6rem;
             border-bottom: 1px solid lesli-css-color(slate);
         }
-
     }
 }

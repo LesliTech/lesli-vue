@@ -50,6 +50,10 @@ const props = defineProps({
         required: false,
         default: false
     },
+    title: {
+        type: String, 
+        required: false
+    },
     editable: {
         type: Boolean,
         required: false,
@@ -59,9 +63,11 @@ const props = defineProps({
 
 </script>
 <template>
-    <form :class="[{ 'lesli-form': !props.flat }]" @submit.prevent="emit('submit')">
+    <form :class="['lesli-form', { 'box': !props.flat }]" @submit.prevent="emit('submit')">
         <fieldset :disabled="!editable">
-            <legend></legend>
+            <legend v-if="props.title" class="is-size-5 mb-3">
+                {{ props.title }}
+            </legend>
             <slot></slot>
         </fieldset>
     </form>

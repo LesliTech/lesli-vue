@@ -1,7 +1,7 @@
 /*
 Lesli
 
-Copyright (c) 2023, Lesli Technologies, S. A.
+Copyright (c) 2024, Lesli Technologies, S. A.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,13 +16,13 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see http://www.gnu.org/licenses/.
 
-Lesli · Ruby on Rails SaaS Development Framework.
+Lesli Vue · Web Components for the Lesli Framework.
 
-Made with ♥ by https://www.lesli.tech
+Made with ♥ by LesliTech
 Building a better future, one line of code at a time.
 
 @contact  hello@lesli.tech
-@website  https://www.lesli.dev
+@website  https://www.lesli.tech
 @license  GPLv3 http://www.gnu.org/licenses/gpl-3.0.en.html
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
@@ -32,12 +32,12 @@ Building a better future, one line of code at a time.
 
 // · 
 import { useLesliMsg } from "./msg/Msg"
-import { useLesliUrl } from "./url/url"
-import { useLesliDate } from "./date/date"
-import { useLesliHttp } from "./http/http";
-import { useLesliDebug } from "./debug/debug";
-import { useLesliUtils } from "./utils/utils";
-import { useLesliDialog } from "./dialog/dialog";
+import { useLesliUrl } from "./url/Url"
+import { useLesliDate } from "./date/Date"
+import { useLesliHttp } from "./http/Http";
+import { useLesliDebug } from "./debug/Debug";
+import { useLesliUtils } from "./utils/Utils";
+import { useLesliDialog } from "./dialog/Dialog";
 
 
 // · 

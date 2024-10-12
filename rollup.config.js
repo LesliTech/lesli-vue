@@ -91,7 +91,7 @@ const components = {
         peerDepsExternal(),
         scss({ fileName: "components.css" }),
     ],
-    external: ["vue", "apexcharts", "trix"]
+    external: ["vue", "apexcharts", "trix", "v-calendar"]
 }
 
 

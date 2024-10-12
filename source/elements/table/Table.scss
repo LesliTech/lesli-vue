@@ -51,6 +51,8 @@ table.lesli-table {
     }
 
     thead {
+        border-radius: 10px 10px 0 0;
+        background-color: #E2E6F6;
 
         th {
             border: none;
@@ -68,9 +70,6 @@ table.lesli-table {
                 cursor: pointer;
             }
         }
-
-        border-radius: 10px 10px 0 0;
-        background-color: #E2E6F6;
     }
 
     tbody {

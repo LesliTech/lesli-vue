@@ -29,133 +29,79 @@ Building a better future, one line of code at a time.
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
 
 
-import { computed, ref } from "vue"
+// · import vue tools
+import { ref } from "vue"
+import "./Input.scss";
 
+
+// · 
 const emit = defineEmits(["update:modelValue", "onError"])
 
+
+// · defining props
 const props = defineProps({
-    // · model value is the value of the input
     modelValue: {
-        type: String,
-        default: "",
+        type: [Number, String],
+        required: false
     },
-    // · placeholder that will be shown when the input is empty
+    label: {
+        type: String,
+        required: false
+    },
     placeholder: {
         type: String,
-        required: false,
-        default: "",
+        required: false
     },
-    // · disabled state of the input
-    disabled: {
-        type: Boolean,
-        required: false,
-        default: false,
-    },
-    // · type of the input, works better with text
     type: {
         type: String,
         required: false,
-        default: "text",
+        default: "text"
     },
-    // · required state of the input
-    required: {
+    horizontal: {
         type: Boolean,
-        required: false,
         default: false,
-    },
-    // · autocomplete will display a list of options provided by the browser
-    autocomplete: {
-        type: String,
-        required: false,
-        default: "off",
-    },
-    // · name of the input
-    name: {
-        type: String,
-        required: false,
-        default: "",
-    },
-    // · label of the input
-    label: {
-        type: String,
-        required: false,
-        default: "",
-    },
-    // · rules that will be applied to the input
-    rules: {
-        type: Array,
-        required: false,
-        default: () => [], 
-    },
+        required: false
+    }
 })
 
 
-// · array of strings with the errors
-const inputErrors = ref([])
+// 
+const inputValue = ref(null)
 
-/**
- * @description verify the rules that are passed as props
- * each rule is a function that returns a string with the error or true if the condition is met
- * each rule looks like: (val) => val !== null && val !== "" || "This field not pass the rule"
- */
-const verifyRules = (textToEvaluate) => {
-    // · reset errors
-    inputErrors.value = []
 
-    // · verify rules
-    if (props.rules.length <= 0) return
-    
-    // · iterate over each rule
-    props.rules.forEach((rule) => {
-        // · rule is a function that returns a string or a boolean
-        const result = rule(textToEvaluate)
-        
-        // · if result is a string, then it's an error
-        if (typeof result === "string") inputErrors.value.push(result)
-        
-        // · do nothing if result is a boolean, then it's a success
-    })
-}
-
-// · get the first error
-const errorToShow = computed(() => inputErrors.value[0])
 
 // · this function is called when the input value changes
 const onInput = (e) => {
-    verifyRules(e.target.value)
     emit("update:modelValue", e.target.value)
-    
-    // · this could be used to emit errors to the parent component
-    // · like lesli-form
-    emit("onError", inputErrors.value)
 }
 
-</script>
 
+</script>
 <template>
-    <div class="control is-clearfix">
-        <label v-if="props.label.length" class="label" :for="props.name">
-            {{ props.label }}
-            <sup v-if="props.required" class="has-text-danger">*</sup>
-        </label>
-        <input 
-            :placeholder="props.placeholder" 
-            :value="props.modelValue"
-            :disabled="props.disabled" 
-            :type="props.type" 
-            :required="props.required"
-            :name="props.name"
-            @input="onInput"
-            class="input is-fullwidth"
-            :autocomplete="props.autocomplete"
-        />
-        <!-- Show alert if input has errors -->
-        <p v-if="inputErrors.length" class="subtitle is-6 has-text-danger mt-1">
-            {{ errorToShow }}
-        </p>
+    <div class="lesli-input mb-3">
+        <div :class="['field', { 'is-horizontal': props.horizontal }]">
+            <div class="field-label is-normal">
+                <label class="label"> 
+                    {{ props.label }}
+                </label>
+            </div>
+            {{ inputValue }}
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <input 
+                            class="input"
+                            name="first_name" 
+                            v-model="inputValue"
+                            :placeholder="props.placeholder" 
+                            :type="props.type"
+                            @input="onInput">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>

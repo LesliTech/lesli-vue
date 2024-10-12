@@ -32,6 +32,11 @@ Building a better future, one line of code at a time.
 
 // · 
 .lesli-form {
+
+    .button {
+        margin-top: 1rem;
+    }
+    /*
     & > fieldset {
         padding: 2.5rem 2rem;
         border-radius: 5px;
@@ -46,4 +51,5 @@ Building a better future, one line of code at a time.
             margin-bottom: 1rem;
         }
     }
+    */
 }
