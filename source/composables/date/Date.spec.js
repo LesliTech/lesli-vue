@@ -37,6 +37,13 @@ import { describe, it } from "vitest"
 // · plugins to be tested
 import { useLesliDate } from "../../composables"
 
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js"; 
+import timezone from "dayjs/plugin/timezone.js";
+
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
 
 // · 
 const LesliDate = useLesliDate()
@@ -45,7 +52,8 @@ const LesliDate = useLesliDate()
 // · 
 describe("COMPOSABLES/DATE", () => {
 
-    const INITIAL_DATE = "2024-12-23T23:45:56:789"
+    const INITIAL_DATE = dayjs.tz("2024-12-23T23:45:56:789", "America/Guatemala")
+
     it("Build a DATE from new Date()", ({ expect }) => {
         var result = (new LesliDate(INITIAL_DATE)).date().toString()
         expect(result).to.be.a("string");
