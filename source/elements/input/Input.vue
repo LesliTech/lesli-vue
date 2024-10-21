@@ -33,7 +33,7 @@ Building a better future, one line of code at a time.
 
 
 // · import vue tools
-import { ref } from "vue"
+import { ref, onMounted, watch } from "vue"
 import "./Input.scss";
 
 
@@ -68,15 +68,32 @@ const props = defineProps({
 })
 
 
-// 
+// · 
 const inputValue = ref(null)
 
+
+// · 
+function updateInputValue() {
+    inputValue.value = props.modelValue
+}
 
 
 // · this function is called when the input value changes
 const onInput = (e) => {
     emit("update:modelValue", e.target.value)
 }
+
+
+// · 
+onMounted(() => {
+    updateInputValue()
+})
+
+
+// · 
+watch(() => props.modelValue, () => {
+    updateInputValue()
+})
 
 
 </script>
@@ -88,13 +105,11 @@ const onInput = (e) => {
                     {{ props.label }}
                 </label>
             </div>
-            {{ inputValue }}
             <div class="field-body">
                 <div class="field">
                     <div class="control">
                         <input 
                             class="input"
-                            name="first_name" 
                             v-model="inputValue"
                             :placeholder="props.placeholder" 
                             :type="props.type"

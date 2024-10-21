@@ -1,3 +1,14 @@
+<script setup>
+    import { ref } from "vue"
+    import LesliInput from "../input/Input.vue"
+
+    const name = ref("ldonis")
+
+    setTimeout(() => {
+        name.value = "Luis Donis"
+    }, 5000)
+</script>
+
 # Input
 
 The component lesli input is registered globally and is meant to be used in all the vue apps as lesli-input
@@ -28,12 +39,6 @@ prop that indicates if the input is required
 - **required**: false
 - **default**: false
 
-**:autocomplete**
-prop that indicates if the input has autocomplete, permitted values are "on" and "off"
-- **type**: String
-- **required**: false
-- **default**: "off"
-
 **:name**
 prop that indicates the name of the input
 - **type**: String
@@ -57,7 +62,6 @@ array of rules to validate the input, the array contains arrow functions that re
 
 ```html
     <lesli-input
-        autocomplete="on"
         required
         name="title"
         label="Titel"
@@ -69,5 +73,5 @@ array of rules to validate the input, the array contains arrow functions that re
         ]"
     />
 ```
-
-
+<lesli-input label="Nombre:" placeholder="Ingresa tu nombre completo." v-model="name">
+</lesli-input>
