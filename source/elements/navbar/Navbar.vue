@@ -38,6 +38,16 @@ import "./Navbar.scss";
 
 
 // · 
+const props = defineProps({
+    unresponsive: {
+        type: Boolean,
+        required: false,
+        default: false
+    }
+})
+
+
+// · 
 const isActive = ref(false)
 
 
@@ -47,13 +57,15 @@ function toggle() {
 }
 </script>
 <template>
-    <nav class="lesli-navbar navbar" role="navigation" aria-label="main navigation">
+    <nav :class="['lesli-navbar navbar', {'unresponsive':props.unresponsive}]" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <slot name="brand"></slot>
-                <button @click="toggle" 
-                    role="button" class="navbar-burger"
-                    aria-label="menu" aria-expanded="false">
+                <button 
+                    @click="toggle" 
+                    role="button"
+                    aria-label="menu" aria-expanded="false"
+                    :class="['navbar-burger', {'is-active': isActive }]">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>

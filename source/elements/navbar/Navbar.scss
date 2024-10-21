@@ -1,12 +1,24 @@
 
 
-.lesli-navbar {
-    
-    .navbar-brand {
+.lesli-navbar.unresponsive {
+    display: flex;
+
+    .container {
+        display: flex;
     }
-    .navbar-item {
-        span, i {
-            padding: 0 4px;
+
+    .navbar-brand .navbar-burger {
+        display: none;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+
+        .navbar-end {
+            display: flex;
+            justify-content: flex-end;
         }
     }
 }
