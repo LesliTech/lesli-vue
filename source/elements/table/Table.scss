@@ -119,3 +119,14 @@ table.lesli-table {
         }
     }
 }
+
+
+@include lesli-css-breakpoint-until-tablet {
+    .lesli-table-container {
+        overflow: auto;
+        overflow-y: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+        margin-bottom: .8rem;
+    }    
+}
