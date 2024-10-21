@@ -45,8 +45,16 @@ const LesliDate = useLesliDate()
 // · 
 describe("COMPOSABLES/DATE", () => {
 
+    const INITIAL_DATE = "2024-12-23T23:45:56:789"
     it("Build a DATE from new Date()", ({ expect }) => {
-        var date = new LesliDate
-        expect(date.date().toString()).to.be.a("string");
+        var result = (new LesliDate(INITIAL_DATE)).date().toString()
+        expect(result).to.be.a("string");
+        expect(result).to.eql("23.12.2024");
+    })
+
+    it("Build a TIME from new Date()", ({ expect }) => {
+        var result = (new LesliDate(INITIAL_DATE)).time().toString()
+        expect(result).to.be.a("string");
+        expect(result).to.eql("23:45");
     })
 });
