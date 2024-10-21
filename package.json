@@ -49,7 +49,7 @@
     },
     "devDependencies": {
 
-        "lesli-css": "../lesli-css/lesli-css-2.1.0.tgz",
+        "lesli-css": "2.1.0",
 
         "rollup": "4.12.0",
         "rollup-plugin-vue": "6.0.0",
