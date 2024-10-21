@@ -16,8 +16,7 @@
 **Result:**
 
 <lesli-header title="My app header">
-    <div class="buttons">
-        <button class="button is-primary">fetch</button>
-        <button class="button is-warning">reset</button>
-    </div>
+    <button class="button is-success">save</button>
+    <button class="button is-primary">fetch</button>
+    <button class="button is-warning">reset</button>
 </lesli-header>

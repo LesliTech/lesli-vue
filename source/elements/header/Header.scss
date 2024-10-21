@@ -28,8 +28,11 @@ Building a better future, one line of code at a time.
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // ·  
-
 */
+
+
+// ·  
+@import "../../scss/component";
 
 
 // · 
@@ -40,5 +43,27 @@ Building a better future, one line of code at a time.
         gap: 0.5rem;
         display: flex;
         align-items: center;
+    }
+}
+
+
+// ·  
+@include lesli-css-breakpoint-mobile {
+    section.lesli-element-header {
+        flex-direction: column;
+
+        .lesli-element-header-title {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@include lesli-css-breakpoint-small {
+    section.lesli-element-header {
+        .lesli-element-header-title,
+        .lesli-element-header-items {
+            justify-content: center !important;
+        }
     }
 }
