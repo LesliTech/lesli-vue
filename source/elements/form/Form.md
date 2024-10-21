@@ -1,7 +1,10 @@
 <script setup>
+    import { ref } from "vue"
+
     import LesliForm from "./Form.vue"
     import LesliInput from "../input/Input.vue"
     import LesliButton from "../button/Button.vue"
+    const name = ref(null)
 </script>
 
 # Form
@@ -22,7 +25,8 @@ Emited when form is submited
 </lesli-form>
 ```
 <lesli-form title="Información de Usuario" @submit="isEditable ? onUpdate() : onCreate()">
-    <lesli-input label="Nombre:" placeholder="Ingresa tu nombre completo."></lesli-input>
+    {{ name }}
+    <lesli-input label="Nombre:" placeholder="Ingresa tu nombre completo." v-model="name"></lesli-input>
     <lesli-input label="E-mail:" placeholder="*Email corporativo unicamente*"></lesli-input>
     <lesli-button>
         Save

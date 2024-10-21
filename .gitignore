@@ -36,6 +36,7 @@
 *.tgz
 .DS_Store
 .nyc_output
+package-lock.json
 /source/widgets
 /node_modules
 /coverage
