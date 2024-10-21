@@ -57,9 +57,6 @@ jobs:
   test:
     name: Test workflow for lesli-vue
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
 
 
     # Do not execute the test if requests comes from another action
@@ -76,10 +73,10 @@ jobs:
 
 
       # Use the official receipt to install ruby in ubuntu
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20.x
 
 
       # Install node dependencies needed for vue tests

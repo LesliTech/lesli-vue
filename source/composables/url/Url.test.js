@@ -35,7 +35,7 @@ import { describe, it } from "vitest"
 
 
 // · plugins to be tested
-import { useLesliUrl } from "./url"
+import { useLesliUrl } from "./Url"
 
 
 // · Composable instance
