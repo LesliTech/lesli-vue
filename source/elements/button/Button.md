@@ -186,9 +186,8 @@ This component accepts one single slot for the button text.
 
 #### Buttons with icon
 
-:::info
-This feature is compatible only with google icons.
-:::
+> This feature is compatible only with google icons.
+
 
 ```html
     <lesli-button icon="refresh">
@@ -208,6 +207,7 @@ This feature is compatible only with google icons.
 </div>
 
 You can avoid the text to have a nice icon button
+
 ```html
 <div class="buttons">
     <lesli-button icon="refresh">
@@ -218,6 +218,7 @@ You can avoid the text to have a nice icon button
     </lesli-button>
 </div>
 ```
+
 <div class="buttons">
     <lesli-button icon="refresh">
     </lesli-button>

@@ -29,46 +29,42 @@ Building a better future, one line of code at a time.
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-
 */
 
 
-
 // · import vue tools
-import { useRouter } from "vue-router"
-import "./Header.scss";
+import { ref, onMounted, watch } from "vue"
+import "./Field.scss";
 
-const router = useRouter()
 
 // · defining props
 const props = defineProps({
-    title: {
+    label: {
         type: String,
-        default: null
+        required: false
     },
-    back: {
-        type: Object,
+    horizontal: {
+        type: Boolean,
+        default: false,
         required: false
     }
 })
-
-function goBack() {
-    router.go(-1)
-}
-
 </script>
 <template>
-    <section class="lesli-element-header is-flex">
-        <div class="lesli-element-header-title is-flex is-align-items-center">
-            <button v-if="false" class="button is-ghost" @click="goBack()">
-                <span class="material-icons">
-                    arrow_back
-                </span>
-            </button>
-            <h1 class="subtitle is-size-3" v-if="title">{{ title }}</h1>
+    <div class="lesli-field mb-3">
+        <div :class="['field', { 'is-horizontal': props.horizontal }]">
+            <div class="field-label is-normal">
+                <label class="label"> 
+                    {{ props.label }}
+                </label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <slot></slot>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="lesli-element-header-items is-flex is-flex-grow-1 is-justify-content-end">
-            <slot></slot>
-        </div>
-    </section>
+    </div>
 </template>

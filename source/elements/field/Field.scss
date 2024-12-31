@@ -1,0 +1,17 @@
+
+
+
+.lesli-field {
+
+    .field-label .label {
+        text-align: left;
+    }
+
+    .field.is-horizontal {
+        margin-bottom: .8rem;
+
+        .field-label .label {
+            text-align: right;
+        }
+    }
+}

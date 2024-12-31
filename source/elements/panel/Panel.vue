@@ -86,10 +86,10 @@ function close() {
             <div v-show="isOpen" class="lesli-panel-content box p-0">
                 <div class="lesli-panel-header is-flex px-4">
                     <div class="is-flex-grow-1">
-                        <h4>
+                        <h5 class="is-size-5">
                             <slot name="header"></slot>
                             {{ props.title }}
-                        </h4>
+                        </h5>
                     </div>
                     <div class="hover" @click="close">
                         <span class="material-icons md-24">

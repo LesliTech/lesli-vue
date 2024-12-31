@@ -40,6 +40,7 @@ import LesliCard from "./card/Card.vue"
 import LesliColumn from "./columns/Column.vue"
 import LesliColumns from "./columns/Columns.vue"
 
+import LesliField from "./field/Field.vue"
 import LesliForm from "./form/Form.vue"
 import LesliInput from "./input/Input.vue"
 import LesliControl from "./control/Control.vue"
@@ -79,7 +80,8 @@ export {
     LesliColumns,
     
     // lesliElementDropdown, 
-    LesliEmpty, 
+    LesliEmpty,
+    LesliField, 
     LesliForm, 
     LesliInput,
     LesliControl, 
